@@ -1,31 +1,123 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的项目介绍网站</title>
-    </head>
-<body>
-    <header>
-        <h1>[Alexian AI]</h1>
+    <title id="pageTitle">我的项目介绍网站</title>
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <style>
+        /* 参考网站的简约配色：黑白灰 */
+        body { font-family: 'Arial', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <nav class="sticky top-0 bg-white border-b border-gray-100 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900">
+                <span data-lang="zh">我的项目</span>
+                <span data-lang="en" class="hidden">My Project</span>
+            </a>
+            
+            <div class="flex items-center space-x-4">
+                <button id="lang-switch" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition duration-150">
+                    <span data-lang="zh">English</span>
+                    <span data-lang="en" class="hidden">中文</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero" class="py-20 md:py-32 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
+                <span data-lang="zh">赋能您的业务，自动化一切</span>
+                <span data-lang="en" class="hidden">Empower Your Business, Automate Everything</span>
+            </h1>
+            <p class="text-lg text-gray-500 mb-8 max-w-2xl mx-auto">
+                <span data-lang="zh">我们提供创新的 AI 解决方案，帮助您简化流程，提高效率。</span>
+                <span data-lang="en" class="hidden">We provide innovative AI solutions to help you streamline processes and enhance efficiency.</span>
+            </p>
+            <a href="#features" class="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
+                <span data-lang="zh">了解更多功能</span>
+                <span data-lang="en" class="hidden">Explore Features</span>
+            </a>
+        </div>
     </header>
 
-    <main>
-        <h2>项目简介</h2>
-        <p>欢迎来到Alexian AI网站！</p>
-        <p>这个项目是关于 [这是ALEX 的AI 项目网站，用于建设自动化工作流的AI 解决方案，服务于与各种垂直的AI 应用]。</p>
+    <section id="features" class="py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-16">
+                <span data-lang="zh">核心功能</span>
+                <span data-lang="en" class="hidden">Core Features</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                        <span data-lang="zh">数据驱动分析</span>
+                        <span data-lang="en" class="hidden">Data-Driven Analysis</span>
+                    </h3>
+                    <p class="text-gray-600">
+                        <span data-lang="zh">利用先进的算法，从海量数据中提取有价值的洞察。</span>
+                        <span data-lang="en" class="hidden">Extract valuable insights from massive data using advanced algorithms.</span>
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                        <span data-lang="zh">流程自动化</span>
+                        <span data-lang="en" class="hidden">Process Automation</span>
+                    </h3>
+                    <p class="text-gray-600">
+                        <span data-lang="zh">告别重复劳动，让 AI 完成日常任务，提高效率。</span>
+                        <span data-lang="en" class="hidden">Eliminate repetitive tasks by letting AI handle daily operations.</span>
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                        <span data-lang="zh">实时反馈系统</span>
+                        <span data-lang="en" class="hidden">Real-Time Feedback</span>
+                    </h3>
+                    <p class="text-gray-600">
+                        <span data-lang="zh">即时获取系统运行状态和性能报告，确保业务顺畅。</span>
+                        <span data-lang="en" class="hidden">Get instant system status and performance reports to ensure smooth operations.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h2>主要功能</h2>
-        <ul>
-            <li>功能一：...</li>
-            <li>功能二：...</li>
-            <li>功能三：...</li>
-        </ul>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 [Alex]. All rights reserved.</p>
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm">
+                <span data-lang="zh">&copy; 2025 我的项目. 保留所有权利.</span>
+                <span data-lang="en" class="hidden">&copy; 2025 My Project. All rights reserved.</span>
+            </p>
+        </div>
     </footer>
 
-    </body>
+    <script>
+        const langSwitch = document.getElementById('lang-switch');
+        let currentLang = 'zh';
+
+        function switchLanguage() {
+            currentLang = currentLang === 'zh' ? 'en' : 'zh';
+            document.documentElement.lang = currentLang;
+            
+            // 切换所有带有 data-lang 属性的元素的显示/隐藏状态
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                if (el.getAttribute('data-lang') === currentLang) {
+                    el.classList.remove('hidden');
+                } else {
+                    el.classList.add('hidden');
+                }
+            });
+            
+            // 切换标题
+            document.getElementById('pageTitle').textContent = document.querySelector(`#pageTitle span[data-lang="${currentLang}"]`)?.textContent || (currentLang === 'zh' ? '我的项目介绍网站' : 'My Project Website');
+        }
+
+        // 绑定语言切换按钮事件
+        langSwitch.addEventListener('click', switchLanguage);
+    </script>
+</body>
 </html>
