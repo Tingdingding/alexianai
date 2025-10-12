@@ -48,6 +48,10 @@
                     <span data-lang="zh">流程</span>
                     <span data-lang="en" class="hidden">Process</span>
                 </a>
+                <a href="#about" class="text-gray-300 hover:text-blue-400 transition duration-150">
+                    <span data-lang="zh">关于</span>
+                    <span data-lang="en" class="hidden">About</span>
+                </a>
                 <a href="#contact" class="text-gray-300 hover:text-blue-400 transition duration-150">
                     <span data-lang="zh">联系</span>
                     <span data-lang="en" class="hidden">Contact</span>
@@ -60,7 +64,7 @@
             </button>
         </div>
     </div>
-</nav>
+    </nav>
     <header id="hero" class="py-20 md:py-32 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4 text-center">
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
@@ -85,7 +89,7 @@
             </a>
         </div>
     </div>
-</header>
+    </header>
     <section id="features" class="py-20 md:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center text-gray-900 mb-16 flex items-center justify-center space-x-3">
@@ -261,8 +265,55 @@
 
         </div>
     </div>
-</section>
+    </section>
 
+    <section id="about" class="py-20 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+            <img src="images/new_section_logo.png" alt="New Logo" class="h-10 mx-auto mb-3"> 
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
+                <span data-lang="zh">关于我们</span>
+                <span data-lang="en" class="hidden">About ALEXIAN AI</span>
+            </h2>
+        </div>
+
+        <div class="md:grid md:grid-cols-2 md:gap-16 items-start">
+            
+            <div>
+                <h3 class="text-3xl font-bold text-gray-900 mb-6">
+                    <span data-lang="zh">我们的使命：驱动下一代社交智能</span>
+                    <span data-lang="en" class="hidden">Our Mission: Driving the Next Generation of Social Intelligence</span>
+                </h3>
+                <p class="text-gray-600 mb-4 text-lg">
+                    <span data-lang="zh">ALEXIAN AI 诞生于一个信念：未来的社交媒体管理将完全由自主智能代理驱动。我们的愿景是解放营销和沟通团队，让他们将精力集中在战略思考上，而将重复和复杂的互动交给可靠的 AI 系统。</span>
+                    <span data-lang="en" class="hidden">ALEXIAN AI was founded on the belief that future social media management will be driven entirely by autonomous intelligent agents. Our vision is to free marketing and communication teams to focus on strategy, entrusting repetitive and complex interactions to reliable AI systems.</span>
+                </p>
+            </div>
+            
+            <div class="mt-12 md:mt-0 p-6 bg-gray-50 rounded-lg border border-gray-200">
+                <h4 class="text-xl font-semibold text-gray-900 mb-4">
+                    <span data-lang="zh">我们相信：定制化与安全</span>
+                    <span data-lang="en" class="hidden">What We Believe: Customization & Security</span>
+                </h4>
+                <ul class="space-y-3 text-gray-600">
+                    <li>
+                        <span data-lang="zh">🚀 客制化是成功的关键：我们拒绝“一刀切”的解决方案，为您的品牌打造专属 AI 代理。</span>
+                        <span data-lang="en" class="hidden">🚀 Customization is Key: We reject one-size-fits-all solutions, building dedicated AI agents tailored to your brand.</span>
+                    </li>
+                    <li>
+                        <span data-lang="zh">🧠 RAG 专有知识库：确保 AI 沟通基于您独特的品牌知识和数据，保证准确性和一致性。</span>
+                        <span data-lang="en" class="hidden">🧠 RAG Proprietary Knowledge Base: Ensures AI communication is based on your unique brand knowledge and data for accuracy and consistency.</span>
+                    </li>
+                    <li>
+                        <span data-lang="zh">🔒 永不妥协的安全标准：我们的系统架构完全符合 SOC-2 和 ISO 标准，保障您的数据安全。</span>
+                        <span data-lang="en" class="hidden">🔒 Uncompromising Security: Our system architecture is fully SOC-2 and ISO compliant, safeguarding your data.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </section>
     <section id="solutions" class="py-20 md:py-32 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -416,7 +467,9 @@
 
     <script>
         const langSwitch = document.getElementById('lang-switch');
-        let currentLang = 'zh';
+        // ... (之前的代码)
+        let currentLang = 'en'; // 将默认语言改为英文 (en)
+
 
         function switchLanguage() {
             currentLang = currentLang === 'zh' ? 'en' : 'zh';
