@@ -9,24 +9,57 @@
         /* 参考网站的简约配色：黑白灰 */
         body { font-family: 'Arial', sans-serif; }
     </style>
+    <style>
+    /* 确保样式在 <head> 标签内 */
+    body { font-family: 'Arial', sans-serif; }
+    
+    /* 添加这一行，实现平滑滚动 */
+    html {
+        scroll-behavior: smooth;
+         }
+    </style>
 </head>
 <body class="bg-white text-gray-800">
 
     <nav class="sticky top-0 bg-white border-b border-gray-100 z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-900">
-                <span data-lang="zh">我的项目</span>
-                <span data-lang="en" class="hidden">My Project</span>
-            </a>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-gray-900">
+            <span data-lang="zh">我的项目</span>
+            <span data-lang="en" class="hidden">My Project</span>
+        </a>
+        
+        <div class="flex items-center space-x-6">
             
-            <div class="flex items-center space-x-4">
-                <button id="lang-switch" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition duration-150">
-                    <span data-lang="zh">English</span>
-                    <span data-lang="en" class="hidden">中文</span>
-                </button>
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#features" class="text-gray-500 hover:text-blue-600 transition duration-150">
+                    <span data-lang="zh">功能</span>
+                    <span data-lang="en" class="hidden">Features</span>
+                </a>
+                <a href="#applications" class="text-gray-500 hover:text-blue-600 transition duration-150">
+                    <span data-lang="zh">应用</span>
+                    <span data-lang="en" class="hidden">Applications</span>
+                </a>
+                <a href="#solutions" class="text-gray-500 hover:text-blue-600 transition duration-150">
+                    <span data-lang="zh">方案</span>
+                    <span data-lang="en" class="hidden">Solutions</span>
+                </a>
+                <a href="#process" class="text-gray-500 hover:text-blue-600 transition duration-150">
+                    <span data-lang="zh">流程</span>
+                    <span data-lang="en" class="hidden">Process</span>
+                </a>
+                <a href="#contact" class="text-gray-500 hover:text-blue-600 transition duration-150">
+                    <span data-lang="zh">联系</span>
+                    <span data-lang="en" class="hidden">Contact</span>
+                </a>
             </div>
+            
+            <button id="lang-switch" class="text-sm font-medium text-gray-500 hover:text-gray-900 transition duration-150">
+                <span data-lang="zh">English</span>
+                <span data-lang="en" class="hidden">中文</span>
+            </button>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <header id="hero" class="py-20 md:py-32 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4 text-center">
