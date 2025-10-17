@@ -101,14 +101,13 @@
     <header id="hero" class="py-16 md:py-24 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4 text-center">
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
-            <span data-lang="zh">我们如何为客户创造价值</span>
-            <span data-lang="en" class="hidden">How We Create Value for Our Clients</span>
+            <span data-lang="zh">案例研究：非营利组织参与度提升 40%</span>
+            <span data-lang="en" class="hidden">Case Study: Non-Profit Achieves 40% Engagement Boost</span>
         </h1>
-        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            <span data-lang="zh">ALEXIAN AI 驱动的转型故事，深入了解每一个成功的背后。</span>
-            <span data-lang="en" class="hidden">The transformation stories driven by ALEXIAN AI, diving into every success behind the scenes.</span>
+        <p class="text-xl text-blue-300 mb-8 max-w-2xl mx-auto">
+            <span data-lang="zh">行业：心理健康服务 | 挑战：社区连接效率低下 | 结果：家庭咨询回复率提高 90%</span>
+            <span data-lang="en" class="hidden">Industry: Mental Health Services | Challenge: Inefficient Community Connection | Result: 90% Improvement in Family Inquiry Response</span>
         </p>
-        
 
         <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <a href="index.html#features" class="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
@@ -127,40 +126,75 @@
     </div>
     </header>
 
-    <section id="casestudies" class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="casestudy-detail" class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center mb-16">
-            <img src="images/new_section_logo.png" alt="New Logo" class="h-10 mx-auto mb-3"> 
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
-                <span data-lang="zh">成功案例</span>
-                <span data-lang="en" class="hidden">Customer Success Stories</span>
-            </h2>
-            <p class="text-xl text-gray-500">
-                <span data-lang="zh">查看 ALEXIAN AI 如何助力不同行业的客户取得成功。</span>
-                <span data-lang="en" class="hidden">See how ALEXIAN AI helps clients achieve success across different industries.</span>
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-xl transition duration-300 transform hover:-translate-y-1">
-                <h3 class="text-xl font-bold text-gray-900 mb-3">
-                    <span data-lang="zh">非营利组织：提升家庭参与度 40%</span>
-                    <span data-lang="en" class="hidden">Non-Profit: 40% Increase in Family Engagement</span>
-                </h3>
-                <p class="text-gray-600 mb-4">
-                    <span data-lang="zh">通过我们的 AI 智能代理，该组织自动识别并回应了 90% 的社群咨询，使得重要信息能够快速传达。</span>
-                    <span data-lang="en" class="hidden">Our AI agent automatically identified and responded to 90% of community inquiries, allowing critical information to be delivered fast.</span>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            
+            <div class="lg:col-span-2 text-lg text-gray-700 leading-relaxed space-y-6">
+                
+                <h2 class="text-3xl font-bold text-gray-900">
+                    <span data-lang="zh">挑战：在喧嚣中建立连接</span>
+                    <span data-lang="en" class="hidden">The Challenge: Connecting Amidst the Noise</span>
+                </h2>
+                <p>
+                    <span data-lang="zh">该非营利组织致力于为自闭症和心理健康儿童提供关键服务。他们面临的主要挑战是：社交媒体咨询量大，但核心工作人员难以持续、快速地筛选和回复紧急的家庭求助，导致潜在服务家庭流失。</span>
+                    <span data-lang="en" class="hidden">This non-profit is dedicated to providing crucial services for children with autism and mental health needs. Their core challenge was managing high volumes of social media inquiries. Staff struggled to consistently and quickly filter and respond to urgent family requests, leading to the loss of potentially served families.</span>
                 </p>
-                <a href="case-study-non-profit.html" class="text-blue-600 hover:text-blue-800 font-semibold text-sm">
-                    <span data-lang="zh">查看详情 →</span>
-                    <span data-lang="en" class="hidden">Read Full Story →</span>
-                </a>
+
+                <h2 class="text-3xl font-bold text-gray-900 pt-6">
+                    <span data-lang="zh">ALEXIAN AI 解决方案</span>
+                    <span data-lang="en" class="hidden">The ALEXIAN AI Solution</span>
+                </h2>
+                <ul class="list-disc list-inside space-y-3 pl-4">
+                    <li>
+                        <span data-lang="zh">**AI 意图识别：** 部署定制的 AI 代理，自动识别包含“紧急”、“帮助”、“预约”等关键词的咨询。</span>
+                        <span data-lang="en" class="hidden">**AI Intent Recognition:** Deployed a custom AI agent to automatically identify inquiries containing keywords like "urgent," "help," or "appointment."</span>
+                    </li>
+                    <li>
+                        <span data-lang="zh">**知识库增强：** 利用 RAG 技术，代理能够基于组织的 FAQs 和服务手册，提供标准化的初步回复。</span>
+                        <span data-lang="en" class="hidden">**Knowledge Base Enhancement:** Used RAG to enable the agent to provide standardized initial responses based on the organization’s FAQs and service manual.</span>
+                    </li>
+                    <li>
+                        <span data-lang="zh">**自动化分流：** 只有需要人工干预的复杂案例才会被推送给核心工作人员。</span>
+                        <span data-lang="en" class="hidden">**Automated Triaging:** Only complex cases requiring human intervention were escalated to core staff members.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="lg:col-span-1 bg-blue-50 p-6 rounded-xl shadow-lg h-fit">
+                <h3 class="text-xl font-bold text-blue-800 mb-4">
+                    <span data-lang="zh">关键结果</span>
+                    <span data-lang="en" class="hidden">Key Results</span>
+                </h3>
+                <div class="space-y-6">
+                    <div class="border-b border-blue-200 pb-4">
+                        <p class="text-4xl font-extrabold text-blue-600">40%</p>
+                        <p class="text-sm text-gray-700">
+                            <span data-lang="zh">家庭参与度提升</span>
+                            <span data-lang="en" class="hidden">Increase in Family Engagement</span>
+                        </p>
+                    </div>
+                    <div class="border-b border-blue-200 pb-4">
+                        <p class="text-4xl font-extrabold text-blue-600">90%</p>
+                        <p class="text-sm text-gray-700">
+                            <span data-lang="zh">咨询自动回复率</span>
+                            <span data-lang="en" class="hidden">Inquiries Handled by AI</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-4xl font-extrabold text-blue-600">85%</p>
+                        <p class="text-sm text-gray-700">
+                            <span data-lang="zh">工作人员时间解放</span>
+                            <span data-lang="en" class="hidden">Staff Time Saved for Core Mission</span>
+                        </p>
+                    </div>
+                </div>
             </div>
             
-            </div>
         </div>
-        </section>
+    </div>
+</section>
   
 
     <section id="contact" class="py-16 md:py-24 bg-gray-50">
