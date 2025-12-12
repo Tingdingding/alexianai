@@ -2,7 +2,6 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZCEP141X7"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,7 +11,7 @@
     gtag('config', 'G-NZCEP141X7');
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">ALEXIAN AI</title>
+    <title id="pageTitle">ALEXIAN AI | 智能代理演示</title>
     <meta name="description" content="ALEXIAN AI is an autonomous social intelligence platform that streamlines media publishing and AI-driven communication for charities and real estate companies.">
     <meta name="keywords" content="AI, Social Media, Automation, AI Agent, RAG, Marketing, Communications, Charity, Real Estate">
 
@@ -24,15 +23,37 @@
     <style>
         /* 参考网站的简约配色：黑白灰 */
         body { font-family: 'Arial', sans-serif; }
-    </style>
-    <style>
-    /* 确保样式在 <head> 标签内 */
-    body { font-family: 'Arial', sans-serif; }
     
-    /* 添加这一行，实现平滑滚动 */
-    html {
-        scroll-behavior: smooth;
-         }
+        /* 添加这一行，实现平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+             }
+        
+        /* 新增的样式用于演示区 */
+        .response-box {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #fafafa;
+            text-align: left; /* 确保文本左对齐 */
+        }
+        .loading {
+            color: #ff9900;
+            font-style: italic;
+        }
+        .decision-info {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 15px;
+            border-top: 1px dashed #ccc;
+            padding-top: 10px;
+        }
+        .agent-answer {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800">
@@ -106,13 +127,13 @@
     <header id="hero" class="py-4 md:py-4 bg-gray-50">
     
     <div class="max-w-4xl mx-auto px-4 text-center">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
-            <span data-lang="zh">启动 ALEXIAN AI 演示沙盒</span>
-            <span data-lang="en" class="hidden">Launch the ALEXIAN AI Demo Sandbox</span>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
+            <span data-lang="zh">启动 ALEXIAN AI Agentic RAG 演示沙盒</span>
+            <span data-lang="en" class="hidden">Launch the ALEXIAN AI Agentic RAG Demo Sandbox</span>
         </h1>
-        <p class="text-xl text-gray-900 mb-8 max-w-2xl mx-auto">
-            <span data-lang="zh">亲手测试 AI 智能代理，无需注册，即刻体验核心社交功能。</span>
-            <span data-lang="en" class="hidden">Test the AI Intelligent Agent firsthand, no sign-up required, experience core social features instantly.</span>
+        <p class="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+            <span data-lang="zh">亲手测试 N8N 智能代理，体验精准知识检索与实时网络搜索的动态决策能力。</span>
+            <span data-lang="en" class="hidden">Test the N8N intelligent agent firsthand, experience the dynamic decision-making of accurate knowledge retrieval and real-time web search.</span>
         </p>
         
 
@@ -136,65 +157,33 @@
     <section id="demo-info" class="py-16 md:py-24 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-8">
-            <span data-lang="zh">您将体验到什么？</span>
-            <span data-lang="en" class="hidden">What You Will Experience</span>
-        </h2>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-8">
+                <span data-lang="zh">Agentic RAG 实时演示： MHACC  知识库</span>
+                <span data-lang="en" class="hidden">Agentic RAG Live Demo: MHACC Knowledge Base</span>
+            </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <p class="text-lg text-gray-600 mb-10">
+                <span data-lang="zh">提问关于 **MHACC** （内部知识）或一般实时信息（外部搜索）的问题，测试 AI 代理的决策能力。</span>
+                <span data-lang="en" class="hidden">Ask questions about **MHACC** policies, courses (internal knowledge) or general real-time information (external search) to test the AI agent's decision-making.</span>
+            </p>
 
-            <div class="p-6 bg-gray-50 rounded-lg shadow-md">
-                <i class="fas fa-robot text-4xl text-blue-600 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">
-                    <span data-lang="zh">实时 AI 互动</span>
-                    <span data-lang="en" class="hidden">Real-time AI Interaction</span>
-                </h3>
-                <p class="text-gray-600 text-sm">
-                    <span data-lang="zh">测试 AI 代理如何理解复杂意图并立即生成自然回复。</span>
-                    <span data-lang="en" class="hidden">Test how the AI agent understands complex intent and generates natural replies instantly.</span>
-                </p>
+            <div id="rag-demo-container" class="bg-gray-50 p-8 rounded-lg shadow-xl">
+                <div style="margin-top: 10px; display: flex;">
+                    <input type="text" id="userInput" placeholder="例如： MHACC 的服务有那些？" class="w-full px-4 py-3 mr-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-base">
+                    <button onclick="sendQuery()" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 flex-shrink-0">
+                        <span data-lang="zh">提问</span>
+                        <span data-lang="en" class="hidden">Ask</span>
+                    </button>
+                </div>
+
+                <div id="responseOutput" class="response-box">
+                    <span data-lang="zh">等待您的提问...</span>
+                    <span data-lang="en" class="hidden">Awaiting your question...</span>
+                </div>
             </div>
-
-            <div class="p-6 bg-gray-50 rounded-lg shadow-md">
-                <i class="fas fa-book-reader text-4xl text-blue-600 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">
-                    <span data-lang="zh">RAG 知识检索</span>
-                    <span data-lang="en" class="hidden">RAG Knowledge Retrieval</span>
-                </h3>
-                <p class="text-gray-600 text-sm">
-                    <span data-lang="zh">见证 AI 如何从模拟知识库中提取信息，给出准确的答案。</span>
-                    <span data-lang="en" class="hidden">See how the AI retrieves information from a simulated knowledge base for accurate answers.</span>
-                </p>
-            </div>
-
-            <div class="p-6 bg-gray-50 rounded-lg shadow-md">
-                <i class="fas fa-pen-alt text-4xl text-blue-600 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">
-                    <span data-lang="zh">内容自动化</span>
-                    <span data-lang="en" class="hidden">Content Automation</span>
-                </h3>
-                <p class="text-gray-600 text-sm">
-                    <span data-lang="zh">体验 AI 根据您的主题和风格要求，快速生成社交媒体文案。</span>
-                    <span data-lang="en" class="hidden">Experience fast social media copy generation based on your topic and style requirements.</span>
-                </p>
-            </div>
-        </div>
-
-        <div class="pt-8">
-            <h3 class="text-2xl font-semibold text-gray-800 mb-6">
-                <span data-lang="zh">准备好了吗？点击下方按钮立即开始！</span>
-                <span data-lang="en" class="hidden">Ready to start? Click the button below to launch now!</span>
-            </h3>
-            <a href="https://demo.alexianai.com" target="_blank" class="inline-block bg-blue-600 text-white hover:bg-blue-700 text-lg font-bold py-4 px-12 rounded-full shadow-xl transition duration-300 transform hover:scale-105">
-                <i class="fas fa-external-link-alt mr-3"></i>
-                <span data-lang="zh">启动演示沙盒 (新窗口打开)</span>
-                <span data-lang="en" class="hidden">Launch Demo Sandbox (Opens New Window)</span>
-            </a>
-        </div>
 
         </div>
     </section>
-
     <section id="contact" class="py-16 md:py-24 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3 flex items-center justify-center space-x-3">
@@ -292,6 +281,65 @@
     </footer>
 
     <script>
+    // =========================================================
+    // !!! 关键步骤：请替换为您的 N8N 生产环境 Webhook URL !!!
+    // =========================================================
+    const N8N_WEBHOOK_URL = 'https://primary-production-766d4.up.railway.app/webhook-test/2636ab69-9b01-4d0a-9146-178947f0c5cf' ; // 请务必替换此占位符！
+
+    async function sendQuery() {
+        const query = document.getElementById('userInput').value;
+        const outputDiv = document.getElementById('responseOutput');
+        const sendButton = document.querySelector('#rag-demo-container button');
+
+        if (!query) {
+            outputDiv.innerHTML = '<p style="color: red;">请输入您想问的问题。</p>';
+            return;
+        }
+
+        // 禁用按钮并显示加载状态
+        sendButton.disabled = true;
+        sendButton.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+        sendButton.classList.add('bg-gray-400', 'cursor-not-allowed');
+
+        outputDiv.innerHTML = '<p class="loading">正在调用 N8N 代理... 请稍候...</p>';
+        
+        try {
+            // 发送 POST 请求到 N8N Webhook
+            const response = await fetch(N8N_WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ question: query }) // N8N Webhook将接收到 { "question": "..." }
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            
+            // 渲染返回的结果
+            outputDiv.innerHTML = `
+                <p class="agent-answer"><strong>🤖 最终答案：</strong> ${result.answer || '未能生成答案。'}</p>
+                <div class="decision-info">
+                    <p><strong>🛠️ 代理决策：</strong> ${result.decision || 'N/A'}</p>
+                    <p><strong>🔗 信息来源：</strong> <a href="${result.source_url || '#'}" target="_blank">${result.source_url ? (result.decision === 'RAG_Search' ? '内部知识库来源' : '外部搜索链接') : 'N/A'}</a></p>
+                </div>
+            `;
+
+        } catch (error) {
+            outputDiv.innerHTML = `<p style="color: red;">请求失败或N8N工作流未运行。详细错误：${error.message}</p>`;
+            console.error('N8N Webhook Error:', error);
+        } finally {
+            // 重新启用按钮
+            sendButton.disabled = false;
+            sendButton.classList.add('bg-blue-600', 'hover:bg-blue-700');
+            sendButton.classList.remove('bg-gray-400', 'cursor-not-allowed');
+        }
+    }
+    
+    // 语言切换和初始化逻辑 (保持不变)
     const langSwitch = document.getElementById('lang-switch');
     // 默认语言设置为英文
     let currentLang = 'en'; 
