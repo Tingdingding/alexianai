@@ -284,9 +284,9 @@
     // =========================================================
     // !!! 关键步骤：请替换为您的 N8N 生产环境 Webhook URL !!!
     // =========================================================
-    const N8N_WEBHOOK_URL = 'https://primary-production-766d4.up.railway.app/webhook-test/2636ab69-9b01-4d0a-9146-178947f0c5cf' ; // 请务必替换此占位符！
+    const N8N_WEBHOOK_URL = 'https://primary-production-766d4.up.railway.app/webhook/2636ab69-9b01-4d0a-9146-178947f0c5cf' ; // 请务必替换此占位符！
 
-    async function sendQuery() {
+     async function sendQuery() {
         const query = document.getElementById('userInput').value;
         const outputDiv = document.getElementById('responseOutput');
         const sendButton = document.querySelector('#rag-demo-container button');
@@ -305,6 +305,8 @@
         
         try {
             // 发送 POST 请求到 N8N Webhook
+            const N8N_WEBHOOK_URL = 'https://primary-production-766d4.up.railway.app/webhook/2636ab69-9b01-4d0a-9146-178947f0c5cf'; // 您的 Webhook URL
+            
             const response = await fetch(N8N_WEBHOOK_URL, {
                 method: 'POST',
                 headers: { 
@@ -314,22 +316,35 @@
             });
 
             if (!response.ok) {
+                // 如果 HTTP 状态码不是 2xx，抛出错误
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
+            // **********************************************
+            // 注意：如果 N8N 返回了空的 JSON，仍会在这里报错！
+            // 确保 N8N 的 Respond to Webhook 节点已修复。
+            // **********************************************
             const result = await response.json();
             
-            // 渲染返回的结果
+            // 构造信息来源链接文本
+            let sourceLinkText = 'N/A';
+            if (result.source_url) {
+                // 根据决策显示不同的文本
+                sourceLinkText = (result.decision === 'RAG_Search') ? '内部知识库来源' : '外部搜索链接';
+                sourceLinkText = `<a href="${result.source_url}" target="_blank">${sourceLinkText}</a>`;
+            }
+
+            // 渲染返回的结果 (移除了图标和中文标签)
             outputDiv.innerHTML = `
-                <p class="agent-answer"><strong>🤖 最终答案：</strong> ${result.answer || '未能生成答案。'}</p>
+                <p class="agent-answer">${result.answer || '未能生成答案。'}</p>
                 <div class="decision-info">
-                    <p><strong>🛠️ 代理决策：</strong> ${result.decision || 'N/A'}</p>
-                    <p><strong>🔗 信息来源：</strong> <a href="${result.source_url || '#'}" target="_blank">${result.source_url ? (result.decision === 'RAG_Search' ? '内部知识库来源' : '外部搜索链接') : 'N/A'}</a></p>
+                    <p>决策：${result.decision || 'N/A'}</p>
+                    <p>来源：${sourceLinkText}</p>
                 </div>
             `;
 
         } catch (error) {
-            outputDiv.innerHTML = `<p style="color: red;">请求失败或N8N工作流未运行。详细错误：${error.message}</p>`;
+            outputDiv.innerHTML = `<p style="color: red;">请求失败。详细错误：${error.message}</p>`;
             console.error('N8N Webhook Error:', error);
         } finally {
             // 重新启用按钮
