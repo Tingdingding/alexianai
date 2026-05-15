@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlexAI Realty Video — Multilingual Property Videos | ALEXIAN AI</title>
+  <meta name="description" content="AI-powered multilingual real estate listing videos in English, Mandarin, Cantonese, Japanese, Korean & Persian. Reach every buyer community. From $99. First listing free." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com/"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#F59E0B',
+            'gold-light': '#FDE68A',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1a56db22 100%); }
+    .lang-tag-anim { transition: all 0.4s ease; }
+    .lang-tag-anim.active { background: #F59E0B; color: #0f172a; border-color: #F59E0B; }
+    .price-card-hover { transition: transform 0.2s, box-shadow 0.2s; }
+    .price-card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
+    .bundle-card:hover { border-color: #3b82f6; transform: translateY(-3px); }
+    .bundle-card { transition: all 0.2s; }
+    @keyframes bounce-down {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+    .bounce { animation: bounce-down 2s infinite; }
+    .step-line::before {
+      content: '';
+      position: absolute; top: 28px; left: calc(50% + 28px);
+      width: calc(100% - 56px); height: 2px;
+      background: #374151;
+    }
+    .step-line:last-child::before { display: none; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- ═══════════════════════════════════════════
+     NAV — identical to alexianai.com
+═══════════════════════════════════════════ -->
+<nav class="sticky top-0 bg-gray-900 text-white border-b border-gray-700 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <a href="/" class="flex items-center space-x-2">
+      <img src="images/alexian_ai_logo.png" alt="ALEXIAN AI Logo" class="h-10"
+           onerror="this.style.display='none'; this.nextElementSibling.style.fontSize='1.4rem';">
+      <span class="text-2xl font-bold text-white">ALEXIAN AI</span>
+    </a>
+    <div class="flex items-center space-x-6">
+      <div class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="/" class="text-gray-300 hover:text-blue-400 transition duration-150">Home</a>
+        <a href="/#applications" class="text-gray-300 hover:text-blue-400 transition duration-150">Applications</a>
+        <a href="/#features" class="text-gray-300 hover:text-blue-400 transition duration-150">Features</a>
+        <a href="case-studies.html" class="text-gray-300 hover:text-blue-400 transition duration-150">Case Studies</a>
+        <a href="blog.html" class="text-gray-300 hover:text-blue-400 transition duration-150">Blog</a>
+        <a href="/#contact" class="text-gray-300 hover:text-blue-400 transition duration-150">Contact</a>
+        <a href="realty.html" class="text-yellow-400 font-semibold hover:text-yellow-300 transition duration-150 border border-yellow-400 rounded-full px-3 py-0.5">🏠 Realty Video</a>
+      </div>
+      <!-- Mobile menu button -->
+      <button class="md:hidden text-gray-300 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-700 px-4 py-4 space-y-3 text-sm">
+    <a href="/" class="block text-gray-300 hover:text-white">Home</a>
+    <a href="/#applications" class="block text-gray-300 hover:text-white">Applications</a>
+    <a href="/#features" class="block text-gray-300 hover:text-white">Features</a>
+    <a href="case-studies.html" class="block text-gray-300 hover:text-white">Case Studies</a>
+    <a href="blog.html" class="block text-gray-300 hover:text-white">Blog</a>
+    <a href="/#contact" class="block text-gray-300 hover:text-white">Contact</a>
+    <a href="realty.html" class="block text-yellow-400 font-semibold">🏠 Realty Video</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section class="gradient-hero min-h-screen flex flex-col items-center justify-center text-center px-6 py-24 relative overflow-hidden">
+  <!-- background grid pattern -->
+  <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle, #ffffff 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+  <!-- breadcrumb -->
+  <div class="relative z-10 mb-6">
+    <span class="text-xs font-semibold tracking-widest uppercase text-yellow-400 bg-yellow-400/10 border border-yellow-400/30 rounded-full px-4 py-1.5">
+      🏠 ALEXIAN AI · Real Estate Video Service
+    </span>
+  </div>
+
+  <h1 class="relative z-10 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight max-w-4xl mx-auto mb-6">
+    One Listing.<br>
+    <span class="text-yellow-400">Five Languages.</span><br>
+    Every Buyer Community.
+  </h1>
+
+  <p class="relative z-10 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+    AI-powered multilingual listing videos that help Southern California agents reach Chinese, Japanese, Cantonese, Korean, and Persian-speaking buyers — all from the same listing photos.
+  </p>
+
+  <!-- Language tags -->
+  <div class="relative z-10 flex flex-wrap gap-2 justify-center mb-10" id="lang-tags">
+    <span class="lang-tag-anim active border border-yellow-400 rounded-full px-4 py-1.5 text-sm font-semibold text-gray-900 bg-yellow-400">🇺🇸 English</span>
+    <span class="lang-tag-anim border border-gray-500 rounded-full px-4 py-1.5 text-sm font-semibold text-white">🇨🇳 普通话</span>
+    <span class="lang-tag-anim border border-gray-500 rounded-full px-4 py-1.5 text-sm font-semibold text-white">🇭🇰 廣東話</span>
+    <span class="lang-tag-anim border border-gray-500 rounded-full px-4 py-1.5 text-sm font-semibold text-white">🇯🇵 日本語</span>
+    <span class="lang-tag-anim border border-gray-500 rounded-full px-4 py-1.5 text-sm font-semibold text-white">🇰🇷 한국어</span>
+    <span class="lang-tag-anim border border-gray-500 rounded-full px-4 py-1.5 text-sm font-semibold text-white">🇮🇷 فارسی</span>
+  </div>
+
+  <!-- CTA buttons -->
+  <div class="relative z-10 flex flex-wrap gap-4 justify-center">
+    <a href="#contact" class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-8 py-4 rounded-full text-base transition duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform">
+      🎁 Get My Free Sample Video
+    </a>
+    <a href="#pricing" class="border-2 border-gray-500 hover:border-white text-white font-bold px-8 py-4 rounded-full text-base transition duration-200 hover:bg-white/10">
+      View Pricing
+    </a>
+  </div>
+  <p class="relative z-10 mt-4 text-gray-500 text-sm">No credit card required · First listing free · 48-hour delivery</p>
+
+  <!-- scroll indicator -->
+  <div class="relative z-10 absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-600 text-xs tracking-widest bounce">↓ SCROLL</div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     STATS BAR
+═══════════════════════════════════════════ -->
+<section class="bg-gray-900 border-y border-gray-700">
+  <div class="max-w-5xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <div>
+      <div class="text-3xl font-extrabold text-blue-400">5+</div>
+      <div class="text-gray-400 text-sm mt-1">Languages Supported</div>
+    </div>
+    <div>
+      <div class="text-3xl font-extrabold text-blue-400">48h</div>
+      <div class="text-gray-400 text-sm mt-1">Delivery Time</div>
+    </div>
+    <div>
+      <div class="text-3xl font-extrabold text-blue-400">40%+</div>
+      <div class="text-gray-400 text-sm mt-1">SoCal Non-English Buyers</div>
+    </div>
+    <div>
+      <div class="text-3xl font-extrabold text-yellow-400">$0</div>
+      <div class="text-gray-400 text-sm mt-1">First Listing Free</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     WHY
+═══════════════════════════════════════════ -->
+<section id="why" class="py-24 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <p class="text-center text-xs font-bold tracking-widest uppercase text-blue-500 mb-3">Why AlexAI Realty Video</p>
+    <h2 class="text-center text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Your Listing Deserves to Be<br>Heard in Every Language</h2>
+    <p class="text-center text-gray-500 max-w-xl mx-auto mb-14">Southern California's buyer pool is the most diverse in the country. Are your listings reaching all of them?</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-gray-50 rounded-2xl p-7 border border-gray-100 price-card-hover">
+        <div class="text-4xl mb-4">🌏</div>
+        <h3 class="text-lg font-bold mb-2">5× More Buyer Reach</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Over 40% of SoCal home buyers prefer to research in their native language. One listing in 5 languages means 5× more potential buyers find your property.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-7 border border-gray-100 price-card-hover">
+        <div class="text-4xl mb-4">⚡</div>
+        <h3 class="text-lg font-bold mb-2">48-Hour Turnaround</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Send us your listing details and photos. We deliver polished, professional videos in all selected languages within 48 hours — ready to post anywhere.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-7 border border-gray-100 price-card-hover">
+        <div class="text-4xl mb-4">🤖</div>
+        <h3 class="text-lg font-bold mb-2">AI-Powered, Human-Reviewed</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Our AI voiceovers are reviewed by native speakers for each language. Broadcast-quality narration with authentic pronunciation — not robotic, not generic.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-7 border border-gray-100 price-card-hover">
+        <div class="text-4xl mb-4">📱</div>
+        <h3 class="text-lg font-bold mb-2">Platform-Ready Formats</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Every video is formatted for YouTube, Instagram, TikTok, WeChat, and Xiaohongshu (RED) — landscape and vertical versions both included.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-7 border border-gray-100 price-card-hover">
+        <div class="text-4xl mb-4">🎭</div>
+        <h3 class="text-lg font-bold mb-2">White-Label Option</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Want your own brand on the video? Full white-label service — your logo, your colors, your name. Clients will never know the backend.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-7 border border-gray-100 price-card-hover">
+        <div class="text-4xl mb-4">📸</div>
+        <h3 class="text-lg font-bold mb-2">No Filming Required</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Just share your MLS photos and property details. We handle scripting, voiceover, animation, and final editing. Zero extra work on your end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     HOW IT WORKS
+═══════════════════════════════════════════ -->
+<section id="how" class="py-24 px-6 bg-gray-50">
+  <div class="max-w-4xl mx-auto">
+    <p class="text-center text-xs font-bold tracking-widest uppercase text-blue-500 mb-3">How It Works</p>
+    <h2 class="text-center text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">As Easy as 1 – 2 – 3</h2>
+    <p class="text-center text-gray-500 mb-16">From your listing details to a publish-ready video in three simple steps.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+      <!-- connector lines (desktop) -->
+      <div class="hidden md:block absolute top-8 left-[calc(33%+12px)] right-[calc(33%+12px)] h-0.5 bg-gray-200 z-0"></div>
+
+      <div class="relative z-10 flex flex-col items-center text-center">
+        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-extrabold mb-5 ring-4 ring-white shadow-lg">1</div>
+        <h3 class="text-lg font-bold mb-2">Share Your Listing</h3>
+        <p class="text-gray-500 text-sm">Fill out a short form with property details, your MLS photos, and preferred languages. Takes under 5 minutes.</p>
+      </div>
+      <div class="relative z-10 flex flex-col items-center text-center">
+        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-extrabold mb-5 ring-4 ring-white shadow-lg">2</div>
+        <h3 class="text-lg font-bold mb-2">We Create Your Videos</h3>
+        <p class="text-gray-500 text-sm">Our AI system generates professional scripts, voiceovers, and visuals for each language — reviewed for accuracy and natural flow.</p>
+      </div>
+      <div class="relative z-10 flex flex-col items-center text-center">
+        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-extrabold mb-5 ring-4 ring-white shadow-lg">3</div>
+        <h3 class="text-lg font-bold mb-2">Post &amp; Attract Buyers</h3>
+        <p class="text-gray-500 text-sm">Receive your videos within 48 hours. Post across your social channels and watch engagement from buyer communities you couldn't reach before.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     LANGUAGES
+═══════════════════════════════════════════ -->
+<section id="languages" class="py-24 px-6 bg-gray-900">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-center text-xs font-bold tracking-widest uppercase text-blue-400 mb-3">Supported Languages</p>
+    <h2 class="text-center text-3xl sm:text-4xl font-extrabold text-white mb-4">Every Community, Every Buyer</h2>
+    <p class="text-center text-gray-400 max-w-xl mx-auto mb-14">We produce real estate videos in the languages that matter most to Southern California's home buyers.</p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div class="bundle-card bg-gray-800 border border-gray-700 rounded-2xl p-5 text-center">
+        <div class="text-3xl mb-2">🇺🇸</div>
+        <div class="text-white font-bold text-sm">English</div>
+        <div class="text-blue-400 text-xs mt-1">English</div>
+        <div class="text-gray-500 text-xs mt-1.5">Mainstream market</div>
+      </div>
+      <div class="bundle-card bg-gray-800 border border-gray-700 rounded-2xl p-5 text-center">
+        <div class="text-3xl mb-2">🇨🇳</div>
+        <div class="text-white font-bold text-sm">Mandarin</div>
+        <div class="text-blue-400 text-xs mt-1">普通话</div>
+        <div class="text-gray-500 text-xs mt-1.5">Chinese community</div>
+      </div>
+      <div class="bundle-card bg-gray-800 border border-gray-700 rounded-2xl p-5 text-center">
+        <div class="text-3xl mb-2">🇭🇰</div>
+        <div class="text-white font-bold text-sm">Cantonese</div>
+        <div class="text-blue-400 text-xs mt-1">廣東話</div>
+        <div class="text-gray-500 text-xs mt-1.5">HK / Macau diaspora</div>
+      </div>
+      <div class="bundle-card bg-gray-800 border border-gray-700 rounded-2xl p-5 text-center">
+        <div class="text-3xl mb-2">🇯🇵</div>
+        <div class="text-white font-bold text-sm">Japanese</div>
+        <div class="text-blue-400 text-xs mt-1">日本語</div>
+        <div class="text-gray-500 text-xs mt-1.5">Japanese investors</div>
+      </div>
+      <div class="bundle-card bg-gray-800 border border-gray-700 rounded-2xl p-5 text-center">
+        <div class="text-3xl mb-2">🇰🇷</div>
+        <div class="text-white font-bold text-sm">Korean</div>
+        <div class="text-blue-400 text-xs mt-1">한국어</div>
+        <div class="text-gray-500 text-xs mt-1.5">Korean community</div>
+      </div>
+      <div class="bundle-card bg-gray-800 border border-gray-700 rounded-2xl p-5 text-center">
+        <div class="text-3xl mb-2">🇮🇷</div>
+        <div class="text-white font-bold text-sm">Persian</div>
+        <div class="text-blue-400 text-xs mt-1">فارسی</div>
+        <div class="text-gray-500 text-xs mt-1.5">Iranian community</div>
+      </div>
+    </div>
+    <p class="text-center text-gray-500 text-sm mt-8">Additional languages available upon request: Vietnamese, Spanish, and more.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PRICING
+═══════════════════════════════════════════ -->
+<section id="pricing" class="py-24 px-6 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-center text-xs font-bold tracking-widest uppercase text-blue-500 mb-3">Transparent Pricing</p>
+    <h2 class="text-center text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Pay Only for What You Need</h2>
+    <p class="text-center text-gray-500 max-w-xl mx-auto mb-14">Most agents serve one or two buyer communities. Pick your language, pick your community — no bundling, no waste.</p>
+
+    <!-- Base rate card -->
+    <div class="max-w-xl mx-auto mb-10 bg-blue-600 rounded-2xl p-8 text-white text-center shadow-xl ring-2 ring-blue-400 price-card-hover">
+      <div class="text-xs font-bold tracking-widest uppercase text-blue-200 mb-2">Base Rate</div>
+      <div class="text-xl font-extrabold mb-1">Single Language Video</div>
+      <div class="text-6xl font-extrabold my-3"><sup class="text-2xl align-top mt-3 inline-block">$</sup>99</div>
+      <div class="text-blue-200 text-sm mb-6">per listing · per language · 48-hour delivery</div>
+      <ul class="text-left space-y-2 text-sm max-w-xs mx-auto mb-7">
+        <li class="flex items-start gap-2"><span class="text-yellow-300 mt-0.5">✓</span> Any language — English, Mandarin, Japanese, Cantonese, Korean, Persian…</li>
+        <li class="flex items-start gap-2"><span class="text-yellow-300 mt-0.5">✓</span> ~60-second professional video</li>
+        <li class="flex items-start gap-2"><span class="text-yellow-300 mt-0.5">✓</span> MLS photos + AI voiceover, native-reviewed script</li>
+        <li class="flex items-start gap-2"><span class="text-yellow-300 mt-0.5">✓</span> YouTube, Instagram &amp; TikTok formats</li>
+        <li class="flex items-start gap-2"><span class="text-yellow-300 mt-0.5">✓</span> 1 revision included</li>
+      </ul>
+      <a href="#contact" class="inline-block bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-8 py-3 rounded-full transition duration-200">Get Started →</a>
+      <p class="text-blue-300 text-xs mt-4">Add a 2nd language for same listing: +$89 (save $10)</p>
+    </div>
+
+    <!-- Community bundles -->
+    <div class="mb-10">
+      <p class="text-center text-xs font-bold tracking-widest uppercase text-gray-400 mb-2">Community Bundles</p>
+      <p class="text-center text-gray-500 text-sm mb-8">Most agents serve a specific ethnic community alongside mainstream buyers. Pick your bundle — English + your community's language.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+
+        <div class="bundle-card bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-center cursor-pointer">
+          <div class="text-2xl mb-2">🇺🇸🇨🇳</div>
+          <div class="font-bold text-sm text-gray-900">Chinese Bundle</div>
+          <div class="text-gray-400 text-xs mt-1 mb-3">EN + Mandarin</div>
+          <div class="text-2xl font-extrabold text-blue-600">$179</div>
+          <div class="text-gray-300 text-xs mb-3">save $19</div>
+          <a href="#contact" class="text-blue-500 text-xs font-semibold hover:underline">Select →</a>
+        </div>
+
+        <div class="bundle-card bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-center cursor-pointer">
+          <div class="text-2xl mb-2">🇺🇸🇭🇰</div>
+          <div class="font-bold text-sm text-gray-900">Cantonese Bundle</div>
+          <div class="text-gray-400 text-xs mt-1 mb-3">EN + Cantonese</div>
+          <div class="text-2xl font-extrabold text-blue-600">$179</div>
+          <div class="text-gray-300 text-xs mb-3">save $19</div>
+          <a href="#contact" class="text-blue-500 text-xs font-semibold hover:underline">Select →</a>
+        </div>
+
+        <div class="bundle-card bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-center cursor-pointer">
+          <div class="text-2xl mb-2">🇺🇸🇯🇵</div>
+          <div class="font-bold text-sm text-gray-900">Japanese Bundle</div>
+          <div class="text-gray-400 text-xs mt-1 mb-3">EN + Japanese</div>
+          <div class="text-2xl font-extrabold text-blue-600">$179</div>
+          <div class="text-gray-300 text-xs mb-3">save $19</div>
+          <a href="#contact" class="text-blue-500 text-xs font-semibold hover:underline">Select →</a>
+        </div>
+
+        <div class="bundle-card bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-center cursor-pointer">
+          <div class="text-2xl mb-2">🇺🇸🇰🇷</div>
+          <div class="font-bold text-sm text-gray-900">Korean Bundle</div>
+          <div class="text-gray-400 text-xs mt-1 mb-3">EN + Korean</div>
+          <div class="text-2xl font-extrabold text-blue-600">$179</div>
+          <div class="text-gray-300 text-xs mb-3">save $19</div>
+          <a href="#contact" class="text-blue-500 text-xs font-semibold hover:underline">Select →</a>
+        </div>
+
+        <div class="bundle-card bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-center cursor-pointer">
+          <div class="text-2xl mb-2">🇺🇸🇮🇷</div>
+          <div class="font-bold text-sm text-gray-900">Persian Bundle</div>
+          <div class="text-gray-400 text-xs mt-1 mb-3">EN + Persian</div>
+          <div class="text-2xl font-extrabold text-blue-600">$179</div>
+          <div class="text-gray-300 text-xs mb-3">save $19</div>
+          <a href="#contact" class="text-blue-500 text-xs font-semibold hover:underline">Select →</a>
+        </div>
+
+      </div>
+      <p class="text-center text-gray-400 text-sm mt-5">Need a different combination? <a href="#contact" class="text-blue-500 font-semibold hover:underline">Contact us for a custom quote →</a></p>
+    </div>
+
+    <!-- Monthly subscription -->
+    <div class="bg-gray-900 rounded-2xl overflow-hidden shadow-xl">
+      <div class="px-8 py-5 border-b border-gray-700 flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h3 class="text-white font-bold text-lg">📅 Monthly Subscription — Save up to 37%</h3>
+          <p class="text-gray-400 text-sm">For active agents with regular listings every month</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3">
+        <div class="p-7 border-b md:border-b-0 md:border-r border-gray-700">
+          <div class="text-white font-bold mb-1">Basic</div>
+          <div class="text-3xl font-extrabold text-blue-400 mb-1">$249<span class="text-base font-normal text-gray-400">/mo</span></div>
+          <div class="text-gray-400 text-sm mb-4">3 listings/mo · 1 language each<br>~$83/video · No contract</div>
+          <a href="#contact" class="text-blue-400 text-sm font-semibold hover:underline">Inquire →</a>
+        </div>
+        <div class="p-7 bg-gray-800 border-b md:border-b-0 md:border-r border-gray-700">
+          <div class="text-yellow-400 font-bold mb-1">Pro ⭐ Most Popular</div>
+          <div class="text-3xl font-extrabold text-blue-400 mb-1">$449<span class="text-base font-normal text-gray-400">/mo</span></div>
+          <div class="text-gray-400 text-sm mb-4">3 listings/mo · English + 1 language each<br>~$75/video · Priority support</div>
+          <a href="#contact" class="text-yellow-400 text-sm font-semibold hover:underline">Inquire →</a>
+        </div>
+        <div class="p-7">
+          <div class="text-white font-bold mb-1">Team</div>
+          <div class="text-3xl font-extrabold text-blue-400 mb-1">$999<span class="text-base font-normal text-gray-400">/mo</span></div>
+          <div class="text-gray-400 text-sm mb-4">8 listings/mo · English + 1 language each<br>~$62/video · White-label included</div>
+          <a href="#contact" class="text-blue-400 text-sm font-semibold hover:underline">Inquire →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Free offer -->
+    <div class="mt-12 bg-gradient-to-br from-gray-900 to-blue-950 rounded-2xl p-10 text-center border border-blue-900 shadow-xl">
+      <div class="text-5xl mb-4">🎁</div>
+      <h3 class="text-2xl font-extrabold text-white mb-3">Your First Listing Is <span class="text-yellow-400">Free</span></h3>
+      <p class="text-gray-400 max-w-md mx-auto mb-7">We're building our portfolio of SoCal agents. Get a professional 60-second video for your first listing — one language of your choice — at zero cost. No strings attached.</p>
+      <a href="#contact" class="inline-block bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-10 py-4 rounded-full text-base transition duration-200 shadow-lg hover:-translate-y-0.5 transform">Claim My Free Video →</a>
+      <p class="text-gray-600 text-xs mt-4">Limited spots available · No credit card · 48-hour delivery</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SAMPLES
+═══════════════════════════════════════════ -->
+<section id="samples" class="py-24 px-6 bg-gray-50">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-center text-xs font-bold tracking-widest uppercase text-blue-500 mb-3">Sample Work</p>
+    <h2 class="text-center text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">See It in Action</h2>
+    <p class="text-center text-gray-500 max-w-2xl mx-auto mb-14">Real listing. Multiple languages. One AI-powered production system.<br>26822 Sommerset Ln, Lake Forest, CA · Listed at $1,188,888</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="bg-white rounded-2xl overflow-hidden shadow border border-gray-100 price-card-hover">
+        <div class="h-40 bg-gradient-to-br from-gray-800 to-blue-900 flex flex-col items-center justify-center relative">
+          <div class="w-14 h-14 bg-white/10 border-2 border-white/60 rounded-full flex items-center justify-center text-white text-2xl mb-2">▶</div>
+          <span class="bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">🇺🇸 English</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-bold text-sm mb-1">English Narration</h4>
+          <p class="text-gray-400 text-xs italic leading-relaxed">"Welcome to 26822 Sommerset Lane — a stunning 4-bedroom home in the heart of Lake Forest..."</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl overflow-hidden shadow border border-gray-100 price-card-hover">
+        <div class="h-40 bg-gradient-to-br from-red-900 to-purple-900 flex flex-col items-center justify-center relative">
+          <div class="w-14 h-14 bg-white/10 border-2 border-white/60 rounded-full flex items-center justify-center text-white text-2xl mb-2">▶</div>
+          <span class="bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">🇨🇳 普通话</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-bold text-sm mb-1">Mandarin Chinese</h4>
+          <p class="text-gray-400 text-xs italic leading-relaxed">"欢迎来到莱克福里斯特的萨默塞特大道26822号——这是一套精美四居室住宅..."</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl overflow-hidden shadow border border-gray-100 price-card-hover">
+        <div class="h-40 bg-gradient-to-br from-green-900 to-teal-900 flex flex-col items-center justify-center relative">
+          <div class="w-14 h-14 bg-white/10 border-2 border-white/60 rounded-full flex items-center justify-center text-white text-2xl mb-2">▶</div>
+          <span class="bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">🇯🇵 日本語</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-bold text-sm mb-1">Japanese</h4>
+          <p class="text-gray-400 text-xs italic leading-relaxed">"こんにちは、Jesseです。レイクフォレストの注目物件をご紹介します..."</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl overflow-hidden shadow border border-gray-100 price-card-hover">
+        <div class="h-40 bg-gradient-to-br from-yellow-900 to-orange-900 flex flex-col items-center justify-center relative">
+          <div class="w-14 h-14 bg-white/10 border-2 border-white/60 rounded-full flex items-center justify-center text-white text-2xl mb-2">▶</div>
+          <span class="bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">🇭🇰 廣東話</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-bold text-sm mb-1">Cantonese</h4>
+          <p class="text-gray-400 text-xs italic leading-relaxed">"歡迎嚟到湖林市嘅索麥塞特道26822號！呢間係一個四睡房嘅靚屋..."</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center mt-10 text-gray-500 text-sm">Want to see a sample for <em>your</em> listing? <a href="#contact" class="text-blue-500 font-semibold hover:underline">Request one free →</a></p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT — ties back to ALEXIAN AI
+═══════════════════════════════════════════ -->
+<section id="about" class="py-24 px-6 bg-gray-900">
+  <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <div>
+      <p class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-3">Powered by ALEXIAN AI</p>
+      <h2 class="text-3xl font-extrabold text-white mb-5 leading-snug">Built by a Bilingual<br><span class="text-blue-400">AI Technologist</span><br>Who Knows Real Estate</h2>
+      <p class="text-gray-400 text-sm leading-relaxed mb-4">AlexAI Realty Video is a product of <a href="/" class="text-blue-400 hover:underline">ALEXIAN AI</a> — an AI automation and social media platform built for multicultural businesses in Southern California.</p>
+      <p class="text-gray-400 text-sm leading-relaxed mb-4">We combined ALEXIAN AI's proprietary multilingual content engine with real estate domain knowledge to create the only listing video service that speaks to every buyer community in SoCal.</p>
+      <p class="text-gray-400 text-sm leading-relaxed mb-8">No filming required. No translators to hire. No extra effort for you — just more buyers seeing your listings.</p>
+      <a href="#contact" class="inline-block bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-7 py-3 rounded-full transition duration-200">Work With Us →</a>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-gray-800 rounded-2xl p-6 text-center border border-gray-700">
+        <div class="text-4xl font-extrabold text-blue-400">5+</div>
+        <div class="text-gray-400 text-xs mt-2">Languages Supported</div>
+      </div>
+      <div class="bg-gray-800 rounded-2xl p-6 text-center border border-gray-700">
+        <div class="text-4xl font-extrabold text-blue-400">48h</div>
+        <div class="text-gray-400 text-xs mt-2">Delivery Time</div>
+      </div>
+      <div class="bg-gray-800 rounded-2xl p-6 text-center border border-gray-700">
+        <div class="text-4xl font-extrabold text-blue-400">40%+</div>
+        <div class="text-gray-400 text-xs mt-2">SoCal Non-English Buyers</div>
+      </div>
+      <div class="bg-gray-800 rounded-2xl p-6 text-center border border-gray-700">
+        <div class="text-4xl font-extrabold text-yellow-400">$0</div>
+        <div class="text-gray-400 text-xs mt-2">First Listing Free</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CONTACT FORM
+═══════════════════════════════════════════ -->
+<section id="contact" class="py-24 px-6 bg-white">
+  <div class="max-w-2xl mx-auto">
+    <p class="text-center text-xs font-bold tracking-widest uppercase text-blue-500 mb-3">Get Started</p>
+    <h2 class="text-center text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Ready to Reach Every Buyer?</h2>
+    <p class="text-center text-gray-500 mb-10">Fill out the form and we'll contact you within 24 hours — or claim your free first video right now.</p>
+
+    <form id="contact-form" onsubmit="handleSubmit(event)" class="bg-gray-50 border border-gray-200 rounded-2xl p-8 shadow space-y-5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1.5">Your Name *</label>
+          <input type="text" required placeholder="Alex Johnson"
+            class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1.5">License # (DRE)</label>
+          <input type="text" placeholder="DRE #01234567"
+            class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1.5">Email *</label>
+          <input type="email" required placeholder="alex@brokerage.com"
+            class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1.5">Phone / WeChat</label>
+          <input type="text" placeholder="+1 (949) 000-0000"
+            class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-1.5">I'm interested in...</label>
+        <select class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+          <option value="">Select a package</option>
+          <option value="free">🎁 Free first listing sample</option>
+          <option value="single">Single Language — $99/listing</option>
+          <option value="bundle-cn">Chinese Bundle — $179 (EN + Mandarin)</option>
+          <option value="bundle-yue">Cantonese Bundle — $179 (EN + Cantonese)</option>
+          <option value="bundle-jp">Japanese Bundle — $179 (EN + Japanese)</option>
+          <option value="bundle-kr">Korean Bundle — $179 (EN + Korean)</option>
+          <option value="bundle-fa">Persian Bundle — $179 (EN + Persian)</option>
+          <option value="subscription">Monthly Subscription</option>
+          <option value="whitelabel">White-Label Partnership</option>
+          <option value="custom">Custom / Other</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-1.5">Listing Address or Message</label>
+        <textarea rows="3" placeholder="Property address, questions, or anything you'd like us to know..."
+          class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white resize-none"></textarea>
+      </div>
+      <button type="submit"
+        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-full text-base transition duration-200 shadow-lg">
+        Send My Request →
+      </button>
+      <p class="text-center text-gray-400 text-xs">We respond within 24 hours. Your information is never shared.</p>
+    </form>
+
+    <div id="form-success" class="hidden text-center py-10">
+      <div class="text-5xl mb-4">✅</div>
+      <h4 class="text-xl font-bold text-gray-900 mb-2">Request Received!</h4>
+      <p class="text-gray-500">Thank you! We'll reach out within 24 hours to get your first video started.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER — identical to alexianai.com
+═══════════════════════════════════════════ -->
+<footer class="bg-gray-900 py-12 border-t border-gray-700">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="space-y-4">
+        <div class="flex items-center justify-center md:justify-start space-x-2">
+          <img src="images/alexian_ai_logo.png" alt="ALEXIAN AI Logo" class="h-8"
+               onerror="this.style.display='none'">
+          <span class="text-xl font-bold text-white">ALEXIAN AI</span>
+        </div>
+        <p class="text-gray-400 text-sm">Copyright © 2026 ALEXIAN AI. All rights reserved.</p>
+      </div>
+      <div class="text-center md:text-left">
+        <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/" class="text-gray-400 hover:text-blue-400 transition">Home — ALEXIAN AI</a></li>
+          <li><a href="realty.html#why" class="text-gray-400 hover:text-blue-400 transition">Why Realty Video</a></li>
+          <li><a href="realty.html#pricing" class="text-gray-400 hover:text-blue-400 transition">Pricing</a></li>
+          <li><a href="realty.html#samples" class="text-gray-400 hover:text-blue-400 transition">Sample Work</a></li>
+          <li><a href="realty.html#contact" class="text-gray-400 hover:text-blue-400 transition">Contact</a></li>
+        </ul>
+      </div>
+      <div class="text-center md:text-left">
+        <h4 class="text-lg font-semibold text-white mb-4">Contact</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><i class="fas fa-envelope mr-2"></i>jqian989@gmail.com</li>
+          <li><i class="fas fa-map-marker-alt mr-2"></i>Irvine, CA · Southern California</li>
+          <li class="pt-2"><a href="realty.html#contact" class="inline-block bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-5 py-2 rounded-full text-xs transition">🎁 Get Free Sample Video</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('form-success').classList.remove('hidden');
+  }
+
+  // Animate language tags
+  const tags = document.querySelectorAll('#lang-tags .lang-tag-anim');
+  let cur = 0;
+  setInterval(() => {
+    tags[cur].classList.remove('active', 'bg-yellow-400', 'text-gray-900', 'border-yellow-400');
+    tags[cur].classList.add('border-gray-500', 'text-white');
+    cur = (cur + 1) % tags.length;
+    tags[cur].classList.remove('border-gray-500', 'text-white');
+    tags[cur].classList.add('active', 'bg-yellow-400', 'text-gray-900', 'border-yellow-400');
+  }, 1800);
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
