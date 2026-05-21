@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlexAI Realty · Links</title>
+  <meta name="description" content="AlexAI Realty — AI-powered multilingual real estate videos. Get your free sample." />
+  <!-- Open Graph (for link previews on social) -->
+  <meta property="og:title" content="AlexAI Realty · Free Sample Video" />
+  <meta property="og:description" content="AI video marketing for real estate agents. Free sample. No commitment." />
+  <meta property="og:image" content="https://pub-10e84ab3f1f64afb929440662d43c7fa.r2.dev/AlexAI_Realty_Logo_Blue.png" />
+  <meta property="og:url" content="https://alexianai.com/links" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com/"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;700&display=swap');
+    body { font-family: 'Inter', 'Noto Sans SC', sans-serif; }
+
+    .gradient-bg {
+      background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 60%, #0f172a 100%);
+      min-height: 100vh;
+    }
+    .dot-grid {
+      background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    /* Link card */
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.05);
+      color: #f9fafb;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: transform 0.18s, background 0.18s, border-color 0.18s;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+    }
+    .link-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.10);
+    }
+    .link-card .icon-wrap {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .link-card .arrow {
+      margin-left: auto;
+      color: rgba(255,255,255,0.3);
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .link-card .sub {
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.45);
+      margin-top: 2px;
+    }
+
+    /* Primary CTA card */
+    .link-card-primary {
+      background: #F59E0B;
+      border-color: #F59E0B;
+      color: #0f172a;
+    }
+    .link-card-primary:hover { background: #fbbf24; border-color: #fbbf24; }
+    .link-card-primary .arrow { color: rgba(15,23,42,0.4); }
+    .link-card-primary .sub { color: rgba(15,23,42,0.55); }
+
+    /* WeChat modal */
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.75);
+      z-index: 999;
+      align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+
+    /* Lang buttons */
+    .lang-btn { transition: all 0.15s; }
+    .lang-btn.active { background: rgba(245,158,11,0.15); border-color: #F59E0B; color: #F59E0B; }
+
+    /* Language spans */
+    .l { display: none; }
+    .l.on { display: inline; }
+  </style>
+</head>
+<body>
+<div class="gradient-bg relative">
+  <div class="absolute inset-0 dot-grid pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-sm mx-auto px-5 py-14 flex flex-col items-center">
+
+    <!-- Logo / Avatar -->
+    <div class="mb-4">
+      <img src="https://pub-10e84ab3f1f64afb929440662d43c7fa.r2.dev/AlexAI_Realty_Logo_Blue.png"
+           alt="AlexAI Realty"
+           class="h-16 w-auto"
+           onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex'" />
+      <div id="logo-fallback" class="hidden w-16 h-16 bg-yellow-400 rounded-2xl items-center justify-content-center text-gray-900 font-extrabold text-xl">AI</div>
+    </div>
+
+    <!-- Name & tagline -->
+    <h1 class="text-white font-extrabold text-2xl tracking-tight mb-1">AlexAI Realty</h1>
+    <p class="text-gray-400 text-sm text-center mb-5 leading-relaxed">
+      <span class="l on" data-l="cn">AI 视频营销 · 专为地产经纪人</span>
+      <span class="l" data-l="yue">AI 視頻營銷 · 專為地產經紀人</span>
+      <span class="l" data-l="en">AI video marketing for real estate agents</span>
+    </p>
+
+    <!-- Language switcher -->
+    <div class="flex gap-2 mb-8">
+      <button class="lang-btn active text-xs px-3 py-1 rounded-full border border-gray-600 text-gray-300" onclick="setLang('cn')">普通话</button>
+      <button class="lang-btn text-xs px-3 py-1 rounded-full border border-gray-600 text-gray-300" onclick="setLang('yue')">廣東話</button>
+      <button class="lang-btn text-xs px-3 py-1 rounded-full border border-gray-600 text-gray-300" onclick="setLang('en')">English</button>
+    </div>
+
+    <!-- ═══ LINKS ═══ -->
+    <div class="w-full flex flex-col gap-3">
+
+      <!-- 1. Free sample CTA — PRIMARY -->
+      <a href="https://alexianai.com/realty" class="link-card link-card-primary">
+        <div class="icon-wrap bg-yellow-600/30">🎬</div>
+        <div>
+          <div>
+            <span class="l on" data-l="cn">免费领取样片</span>
+            <span class="l" data-l="yue">免費攞樣片</span>
+            <span class="l" data-l="en">Get Free Sample Video</span>
+          </div>
+          <div class="sub">
+            <span class="l on" data-l="cn">零风险 · 24 小时内回复</span>
+            <span class="l" data-l="yue">零風險 · 24 小時內回覆</span>
+            <span class="l" data-l="en">No commitment · Reply in 24h</span>
+          </div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <!-- 2. WhatsApp -->
+      <a href="https://wa.me/19492598020" target="_blank" class="link-card" style="border-color:rgba(37,211,102,0.25); background:rgba(37,211,102,0.07);">
+        <div class="icon-wrap" style="background:rgba(37,211,102,0.15);">💬</div>
+        <div>
+          <div>WhatsApp</div>
+          <div class="sub">+1 (949) 259-8020</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <!-- 3. WeChat -->
+      <button onclick="openWechat()" class="link-card" style="border-color:rgba(7,193,96,0.25); background:rgba(7,193,96,0.07);">
+        <div class="icon-wrap" style="background:rgba(7,193,96,0.15);">💬</div>
+        <div>
+          <div>
+            <span class="l on" data-l="cn">微信联系</span>
+            <span class="l" data-l="yue">微信聯繫</span>
+            <span class="l" data-l="en">WeChat</span>
+          </div>
+          <div class="sub">
+            <span class="l on" data-l="cn">点击查看微信号</span>
+            <span class="l" data-l="yue">點擊查看微信號</span>
+            <span class="l" data-l="en">Tap to see WeChat ID</span>
+          </div>
+        </div>
+        <span class="arrow">→</span>
+      </button>
+
+      <!-- Divider -->
+      <div class="flex items-center gap-3 py-1">
+        <div class="flex-1 h-px bg-gray-700/60"></div>
+        <span class="text-gray-600 text-xs tracking-widest uppercase">
+          <span class="l on" data-l="cn">关注我们</span>
+          <span class="l" data-l="yue">追蹤我們</span>
+          <span class="l" data-l="en">Follow us</span>
+        </span>
+        <div class="flex-1 h-px bg-gray-700/60"></div>
+      </div>
+
+      <!-- 4. YouTube -->
+      <a href="https://youtube.com/@alexairealty" target="_blank" class="link-card" style="border-color:rgba(255,0,0,0.2); background:rgba(255,0,0,0.05);">
+        <div class="icon-wrap" style="background:rgba(255,0,0,0.12);">
+          <i class="fab fa-youtube text-red-500 text-2xl"></i>
+        </div>
+        <div>
+          <div>YouTube</div>
+          <div class="sub">@alexairealty</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <!-- 5. TikTok -->
+      <a href="https://tiktok.com/@alexairealty" target="_blank" class="link-card" style="border-color:rgba(255,255,255,0.1); background:rgba(255,255,255,0.04);">
+        <div class="icon-wrap" style="background:rgba(255,255,255,0.08);">
+          <i class="fab fa-tiktok text-white text-2xl"></i>
+        </div>
+        <div>
+          <div>TikTok</div>
+          <div class="sub">@alexairealty</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <!-- 6. Instagram -->
+      <a href="https://instagram.com/alexairealty" target="_blank" class="link-card" style="border-color:rgba(225,48,108,0.2); background:rgba(225,48,108,0.05);">
+        <div class="icon-wrap" style="background: linear-gradient(135deg, rgba(253,186,31,0.15), rgba(225,48,108,0.15), rgba(88,81,219,0.15));">
+          <i class="fab fa-instagram text-pink-400 text-2xl"></i>
+        </div>
+        <div>
+          <div>Instagram</div>
+          <div class="sub">@alexairealty</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <!-- Divider -->
+      <div class="flex items-center gap-3 py-1">
+        <div class="flex-1 h-px bg-gray-700/60"></div>
+        <span class="text-gray-600 text-xs tracking-widest uppercase">
+          <span class="l on" data-l="cn">了解更多</span>
+          <span class="l" data-l="yue">了解更多</span>
+          <span class="l" data-l="en">Learn more</span>
+        </span>
+        <div class="flex-1 h-px bg-gray-700/60"></div>
+      </div>
+
+      <!-- 7. Main website -->
+      <a href="https://alexianai.com/realty.html" target="_blank" class="link-card">
+        <div class="icon-wrap" style="background:rgba(59,130,246,0.15);">🏠</div>
+        <div>
+          <div>
+            <span class="l on" data-l="cn">查看完整服务介绍</span>
+            <span class="l" data-l="yue">查看完整服務介紹</span>
+            <span class="l" data-l="en">View Full Service Page</span>
+          </div>
+          <div class="sub">alexianai.com/realty</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+    </div>
+
+    <!-- Footer -->
+    <p class="text-gray-600 text-xs mt-10 text-center">
+      © 2026 <a href="https://alexianai.com" class="hover:text-gray-400 transition">ALEXIAN AI</a>
+    </p>
+
+  </div>
+</div>
+
+<!-- ═══ WECHAT MODAL ═══ -->
+<div class="modal-overlay" id="wechatModal" onclick="closeModal(event)">
+  <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8 max-w-xs w-full text-center">
+    <div class="text-5xl mb-3">💬</div>
+    <h3 class="text-white font-extrabold text-lg mb-2">
+      <span class="l on" data-l="cn">微信联系</span>
+      <span class="l" data-l="yue">微信聯繫</span>
+      <span class="l" data-l="en">WeChat</span>
+    </h3>
+    <p class="text-gray-400 text-sm mb-4">
+      <span class="l on" data-l="cn">复制微信号，在微信中搜索添加</span>
+      <span class="l" data-l="yue">複製微信號，喺微信搜索新增</span>
+      <span class="l" data-l="en">Copy the ID and search in WeChat</span>
+    </p>
+    <div class="bg-green-500/10 border border-green-500/30 rounded-xl py-4 px-6 text-green-400 text-xl font-bold tracking-widest mb-5">
+      alexai_realty
+    </div>
+    <button onclick="copyWechat(this)"
+      class="w-full bg-green-500 hover:bg-green-400 text-white font-bold py-3 rounded-full transition mb-3 text-sm">
+      <span class="l on" data-l="cn">复制微信号</span>
+      <span class="l" data-l="yue">複製微信號</span>
+      <span class="l" data-l="en">Copy WeChat ID</span>
+    </button>
+    <button onclick="document.getElementById('wechatModal').classList.remove('open')"
+      class="text-gray-500 hover:text-gray-300 text-sm transition">
+      <span class="l on" data-l="cn">关闭</span>
+      <span class="l" data-l="yue">關閉</span>
+      <span class="l" data-l="en">Close</span>
+    </button>
+  </div>
+</div>
+
+<script>
+  let currentLang = 'cn';
+
+  function setLang(lang) {
+    currentLang = lang;
+    // Spans
+    document.querySelectorAll('.l').forEach(el => {
+      el.classList.toggle('on', el.dataset.l === lang);
+    });
+    // Buttons
+    document.querySelectorAll('.lang-btn').forEach((btn, i) => {
+      btn.classList.toggle('active', ['cn','yue','en'][i] === lang);
+    });
+    document.documentElement.lang = { cn:'zh-CN', yue:'zh-TW', en:'en' }[lang];
+  }
+
+  function openWechat() {
+    document.getElementById('wechatModal').classList.add('open');
+  }
+  function closeModal(e) {
+    if (e.target === document.getElementById('wechatModal')) {
+      document.getElementById('wechatModal').classList.remove('open');
+    }
+  }
+  function copyWechat(btn) {
+    navigator.clipboard.writeText('alexai_realty').then(() => {
+      const orig = btn.innerHTML;
+      btn.textContent = '✅ Copied!';
+      setTimeout(() => { btn.innerHTML = orig; }, 2000);
+    });
+  }
+</script>
+</body>
+</html>
