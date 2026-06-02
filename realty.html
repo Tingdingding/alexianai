@@ -288,32 +288,25 @@
     .vcard { background: var(--white); border-radius: var(--r); overflow: hidden; box-shadow: var(--sh); border: 1px solid var(--g100); }
     .vcard-thumb {
       position: relative;
-      height: 200px;
+      padding-bottom: 56.25%; /* 16:9 缩略图比例 */
+      height: 0;
       background: linear-gradient(135deg, var(--navy) 0%, #1a3a6b 100%);
-      overflow: hidden; cursor: pointer; display: block; text-decoration: none;
+      overflow: hidden; cursor: pointer; display: block;
     }
-    .vcard-thumb-bg {
-      position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M20 20.5V18H0v5h5v5H0v5h5v4h5v-4h5v4h5v-4h5v4h5v-4h4v-5h-4v-5h4v-5h-4v-5H20v.5z'/%3E%3C/g%3E%3C/svg%3E");
+    .vcard-thumb img {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover; transition: opacity 0.2s;
     }
-    .vcard-thumb-label {
-      position: absolute; bottom: 12px; left: 12px; right: 12px;
-      color: rgba(255,255,255,0.5); font-size: 0.7rem; font-weight: 600;
-      letter-spacing: 1px; text-transform: uppercase;
-    }
+    .vcard-thumb:hover img { opacity: 0.8; }
     .vcard-play {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%);
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
       width: 60px; height: 60px; background: rgba(255,0,0,0.9); border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.2s, background 0.2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5); transition: transform 0.2s, background 0.2s;
+      pointer-events: none;
     }
-    .vcard-thumb:hover .vcard-play { background: #ff0000; transform: translate(-50%, -60%) scale(1.12); }
+    .vcard-thumb:hover .vcard-play { background: #ff0000; transform: translate(-50%, -50%) scale(1.12); }
     .vcard-play svg { width: 24px; height: 24px; fill: white; margin-left: 5px; }
-    .vcard-yt-label {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, 22px);
-      color: rgba(255,255,255,0.7); font-size: 0.72rem; font-weight: 600;
-      white-space: nowrap; letter-spacing: 0.5px;
-    }
     .vcard-info { padding: 14px 16px; }
     .pill-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 7px; }
     .pill { font-size: 0.67rem; font-weight: 700; padding: 2px 9px; border-radius: 10px; background: var(--gold); color: var(--navy); }
@@ -652,32 +645,32 @@
     <div class="video-group-title" data-i18n="vg-market">📊 市场分析</div>
     <div class="video-grid">
       <div class="vcard">
-        <a class="vcard-thumb" href="#" onclick="openVideo('0x11W28KfoY');return false;">
-          <div class="vcard-thumb-bg"></div>
+        <div class="vcard-thumb" onclick="openVideo('0x11W28KfoY')">
+          <img src="https://i.ytimg.com/vi/0x11W28KfoY/hqdefault.jpg" alt="video" loading="lazy">
           <div class="vcard-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <div class="vcard-yt-label">点击播放</div>
         </a>
         <div class="vcard-info"><div class="pill-row"><span class="pill">🇨🇳 普通话</span></div><h4>尔湾市场分析</h4><p>中位价·成交速度·库存趋势 · 2026最新</p></div>
       </div>
       <div class="vcard">
-        <a class="vcard-thumb" href="#" onclick="openVideo('T2ryq0vxKlM');return false;">
-          <div class="vcard-thumb-bg"></div>
+        <div class="vcard-thumb" onclick="openVideo('T2ryq0vxKlM')">
+          <img src="https://i.ytimg.com/vi/T2ryq0vxKlM/hqdefault.jpg" alt="video" loading="lazy">
           <div class="vcard-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <div class="vcard-yt-label">Click to Play</div>
         </a>
         <div class="vcard-info"><div class="pill-row"><span class="pill pill-en">🇺🇸 English</span></div><h4>Irvine Market Analysis</h4><p>Median price · DOM · Inventory · 2026</p></div>
       </div>
       <div class="vcard">
-        <a class="vcard-thumb" href="#" onclick="openVideo('lpWUBcs-iEs');return false;">
-          <div class="vcard-thumb-bg"></div>
+        <div class="vcard-thumb" onclick="openVideo('lpWUBcs-iEs')">
+          <img src="https://i.ytimg.com/vi/lpWUBcs-iEs/hqdefault.jpg" alt="video" loading="lazy">
           <div class="vcard-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <div class="vcard-yt-label">点击播放</div>
         </a>
         <div class="vcard-info"><div class="pill-row"><span class="pill">🇨🇳 普通话</span></div><h4>亚凯迪亚市场分析</h4><p>华人核心置业区 · 豪宅市场解读</p></div>
       </div>
       <div class="vcard">
-        <a class="vcard-thumb" href="#" onclick="openVideo('dsrlmnqA9uI');return false;">
-          <div class="vcard-thumb-bg"></div>
+        <div class="vcard-thumb" onclick="openVideo('dsrlmnqA9uI')">
+          <img src="https://i.ytimg.com/vi/dsrlmnqA9uI/hqdefault.jpg" alt="video" loading="lazy">
           <div class="vcard-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <div class="vcard-yt-label">点击播放</div>
         </a>
@@ -690,16 +683,16 @@
     <div class="video-group-title" data-i18n="vg-school">🎓 学区介绍</div>
     <div class="video-grid">
       <div class="vcard">
-        <a class="vcard-thumb" href="#" onclick="openVideo('DscqqFFal1A');return false;">
-          <div class="vcard-thumb-bg"></div>
+        <div class="vcard-thumb" onclick="openVideo('DscqqFFal1A')">
+          <img src="https://i.ytimg.com/vi/DscqqFFal1A/hqdefault.jpg" alt="video" loading="lazy">
           <div class="vcard-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <div class="vcard-yt-label">点击播放</div>
         </a>
         <div class="vcard-info"><div class="pill-row"><span class="pill">🇨🇳 普通话</span></div><h4>尔湾学区介绍</h4><p>K-8到顶尖高中 · Portola High 满分 · 华人必看</p></div>
       </div>
       <div class="vcard">
-        <a class="vcard-thumb" href="#" onclick="openVideo('At-_74HsMf4');return false;">
-          <div class="vcard-thumb-bg"></div>
+        <div class="vcard-thumb" onclick="openVideo('At-_74HsMf4')">
+          <img src="https://i.ytimg.com/vi/At-_74HsMf4/hqdefault.jpg" alt="video" loading="lazy">
           <div class="vcard-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <div class="vcard-yt-label">点击播放</div>
         </a>
@@ -712,24 +705,24 @@
     <div class="video-group-title" data-i18n="vg-listing">🏠 房源介绍</div>
     <div class="video-grid">
       <div class="vcard">
-        <a class="vcard-thumb" href="#" onclick="openVideo('tlwrU3Epcv4');return false;">
-          <div class="vcard-thumb-bg"></div>
+        <div class="vcard-thumb" onclick="openVideo('tlwrU3Epcv4')">
+          <img src="https://i.ytimg.com/vi/tlwrU3Epcv4/hqdefault.jpg" alt="video" loading="lazy">
           <div class="vcard-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <div class="vcard-yt-label">点击播放</div>
         </a>
         <div class="vcard-info"><div class="pill-row"><span class="pill">🇨🇳 普通话</span></div><h4>153 Fixie · 尔湾 · $142万</h4><p>3床3.5浴 · Portola High学区 · 步行K-8</p></div>
       </div>
       <div class="vcard">
-        <a class="vcard-thumb" href="#" onclick="openVideo('O8ai15QRQRc');return false;">
-          <div class="vcard-thumb-bg"></div>
+        <div class="vcard-thumb" onclick="openVideo('O8ai15QRQRc')">
+          <img src="https://i.ytimg.com/vi/O8ai15QRQRc/hqdefault.jpg" alt="video" loading="lazy">
           <div class="vcard-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <div class="vcard-yt-label">点击播放</div>
         </a>
         <div class="vcard-info"><div class="pill-row"><span class="pill">🇨🇳 普通话</span><span class="pill pill-av">👤 数字经纪人</span></div><h4>153 Fixie · Avatar 版</h4><p>买方经纪人视角 · 有孩子上学家庭强烈推荐</p></div>
       </div>
       <div class="vcard">
-        <a class="vcard-thumb" href="#" onclick="openVideo('SWIy5XPUQds');return false;">
-          <div class="vcard-thumb-bg"></div>
+        <div class="vcard-thumb" onclick="openVideo('SWIy5XPUQds')">
+          <img src="https://i.ytimg.com/vi/SWIy5XPUQds/hqdefault.jpg" alt="video" loading="lazy">
           <div class="vcard-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <div class="vcard-yt-label">Click to Play</div>
         </a>
@@ -742,8 +735,8 @@
     <div class="video-group-title" data-i18n="vg-ad">🏆 成交排名</div>
     <div class="video-grid">
       <div class="vcard">
-        <a class="vcard-thumb" href="#" onclick="openVideo('25CdvQ7vDRw');return false;">
-          <div class="vcard-thumb-bg"></div>
+        <div class="vcard-thumb" onclick="openVideo('25CdvQ7vDRw')">
+          <img src="https://i.ytimg.com/vi/25CdvQ7vDRw/hqdefault.jpg" alt="video" loading="lazy">
           <div class="vcard-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <div class="vcard-yt-label">点击播放</div>
         </a>
