@@ -1126,16 +1126,18 @@ function closeWechat(e){if(e.target===document.getElementById('wechat-modal')){d
 function closeWechatBtn(){document.getElementById('wechat-modal').classList.remove('open');document.body.style.overflow='';}
 
 function openVideo(videoId){
-  document.getElementById('video-iframe').src='https://www.youtube.com/embed/'+videoId+'?autoplay=1&rel=0';
-  document.getElementById('video-modal').classList.add('open');
-  document.body.style.overflow='hidden';
+  var modal = document.getElementById('video-modal');
+  var iframe = document.getElementById('video-iframe');
+  iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&playsinline=1';
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
 }
-function closeVideo(e){if(e.target===document.getElementById('video-modal')){closeVideoBtn();}}
 function closeVideoBtn(){
   document.getElementById('video-iframe').src='';
-  document.getElementById('video-modal').classList.remove('open');
+  document.getElementById('video-modal').style.display='none';
   document.body.style.overflow='';
 }
+function closeVideo(e){if(e.target===document.getElementById('video-modal')){closeVideoBtn();}}
 </script>
 </body>
 </html>
