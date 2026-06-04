@@ -363,6 +363,26 @@
     }
     .form-submit:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: var(--sh2); }
     .form-note { text-align: center; color: rgba(255,255,255,0.34); font-size: 0.75rem; margin-top: 12px; }
+    /* Audio hint box */
+    .audio-hint {
+      display: none; margin-top: 12px;
+      background: rgba(245,158,11,0.10); border: 1px solid rgba(245,158,11,0.35);
+      border-radius: 10px; padding: 16px 18px; animation: fadeIn 0.3s ease;
+    }
+    .audio-hint.show { display: block; }
+    .audio-hint-title { font-size: 0.9rem; font-weight: 700; color: var(--gold); margin-bottom: 12px; }
+    .audio-hint-body { display: flex; gap: 20px; flex-wrap: wrap; }
+    .ah-col { flex: 1; min-width: 180px; }
+    .ah-col strong { font-size: 0.82rem; color: var(--white); display: block; margin-bottom: 6px; }
+    .ah-col ul { list-style: none; padding: 0; margin: 0; }
+    .ah-col ul li { font-size: 0.78rem; color: rgba(255,255,255,0.72); padding: 2px 0; padding-left: 12px; position: relative; }
+    .ah-col ul li::before { content: "·"; position: absolute; left: 0; color: var(--gold); }
+    .ah-note { margin-top: 12px; font-size: 0.78rem; color: rgba(255,255,255,0.8); background: rgba(245,158,11,0.12); border-radius: 6px; padding: 8px 12px; }
+    .ah-note strong { color: var(--gold); }
+    .ah-send { margin-top: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.65); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px; }
+    .ah-send a { color: var(--gold); font-weight: 700; text-decoration: none; }
+    .ah-send a:hover { text-decoration: underline; }
+
     .form-success { display: none; text-align: center; color: var(--white); padding: 20px; }
     .form-success .check { font-size: 2.8rem; margin-bottom: 10px; }
     .form-success h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 6px; }
@@ -809,11 +829,38 @@
         <select name="plan">
           <option value="" data-i18n="fp-0">请选择</option>
           <option value="free" data-i18n="fp-1">🎁 先免费领一套样片</option>
-          <option value="starter" data-i18n="fp-2">入门款 — $99/月（3条视频，1种语言，无Avatar）</option>
-          <option value="basic" data-i18n="fp-3">基础款 — $199/月（3条视频，双语，有Avatar）</option>
-          <option value="pro" data-i18n="fp-4">专业款 — $349/月（6条视频，双语，有Avatar）</option>
+          <option value="starter" data-i18n="fp-2">入门款 — $99/月（3条视频，1种语言，无数字替身）</option>
+          <option value="basic" data-i18n="fp-3">基础款 — $199/月（3条视频，双语，有定制数字替身）</option>
+          <option value="pro" data-i18n="fp-4">专业款 — $349/月（6条视频，双语，有定制数字替身）</option>
           <option value="enterprise" data-i18n="fp-5">企业版 — 预约面谈</option>
         </select>
+
+        <!-- 音频/照片要求提示框，选含Avatar/音色套餐时展开 -->
+        <div class="audio-hint" id="audio-hint">
+          <div class="audio-hint-title" data-i18n="ah-t">📋 定制所需素材说明</div>
+          <div class="audio-hint-body">
+            <div class="ah-col">
+              <strong data-i18n="ah-photo-t">🖼 经纪人照片</strong>
+              <ul>
+                <li data-i18n="ah-photo-1">正面清晰，光线充足</li>
+                <li data-i18n="ah-photo-2">背景简洁（纯色或室内）</li>
+                <li data-i18n="ah-photo-3">格式：JPG / PNG，≥ 1MB</li>
+              </ul>
+            </div>
+            <div class="ah-col">
+              <strong data-i18n="ah-audio-t">🎙 训练用音频</strong>
+              <ul>
+                <li data-i18n="ah-audio-1">时长：3～10 分钟</li>
+                <li data-i18n="ah-audio-2">内容：朗读任意文字（自我介绍、新闻均可）</li>
+                <li data-i18n="ah-audio-3">环境：安静室内，无背景噪音</li>
+                <li data-i18n="ah-audio-4">设备：手机录音即可</li>
+                <li data-i18n="ah-audio-5">格式：MP3 / WAV / M4A</li>
+              </ul>
+            </div>
+          </div>
+          <p class="ah-note" data-i18n="ah-note">📝 发送素材时，请在邮件中注明您的<strong>姓名</strong>及 <strong>DRE 执照号</strong>，以便与表单信息匹配。</p>
+          <p class="ah-send" data-i18n="ah-send">✉️ 提交表单后，请将以上素材发送至 <a href="mailto:alexairealty8@gmail.com">alexairealty8@gmail.com</a></p>
+        </div>
       </div>
 
       <div class="fg">
@@ -828,6 +875,8 @@
       <div class="check">✅</div>
       <h4 data-i18n="fs-t">已收到！</h4>
       <p data-i18n="fs-p">我们会在24小时内联系你，开始为你的城市和目标客户制作第一条视频。</p>
+      <p data-i18n="fs-upload" style="margin-top:14px;font-size:0.85rem;background:rgba(255,255,255,0.08);border-radius:8px;padding:12px 16px;line-height:1.7;">📎 如需定制数字替身或个人音色，请将<strong>经纪人照片</strong>及<strong>训练用音频</strong>发送至：<br><a href="mailto:alexairealty8@gmail.com" style="color:var(--gold);font-weight:700;">alexairealty8@gmail.com</a></p>
+      <button onclick="resetForm()" data-i18n="fs-back" style="margin-top:18px;background:transparent;border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.7);padding:9px 24px;border-radius:20px;font-size:0.85rem;cursor:pointer;font-family:inherit;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.7)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';this.style.color='rgba(255,255,255,0.7)'">← 返回表单</button>
     </div>
   </div>
 </section>
@@ -940,10 +989,16 @@ const T = {
     "f-audience":"你的目标客户主要说什么语言？ *",
     "fa-0":"请选择","fa-1":"🇨🇳 普通话（华人客户）","fa-2":"🇭🇰 粤语（港澳移民）","fa-3":"🇺🇸 英语（主流市场）","fa-4":"🇯🇵 日语（日裔客户）","fa-5":"🇰🇷 韩语（韩裔客户）","fa-6":"🇮🇷 波斯语（伊朗社区）","fa-7":"多语言（不止一种）",
     "f-plan":"感兴趣的套餐",
-    "fp-0":"请选择","fp-1":"🎁 先免费领一套样片","fp-2":"入门款 — $99/月","fp-3":"基础款 — $199/月","fp-4":"专业款 — $349/月","fp-5":"企业版 — 预约面谈",
+    "fp-0":"请选择","fp-1":"🎁 先免费领一套样片","fp-2":"入门款 — $99/月（无数字替身）","fp-3":"基础款 — $199/月（有定制数字替身）","fp-4":"专业款 — $349/月（有定制数字替身）","fp-5":"企业版 — 预约面谈",
     "f-msg":"其他说明（可选）","f-msg-ph":"你的任何想法、问题，或者你最想做的第一条视频内容…",
     "f-submit":"发送，免费领样片 →","f-note":"24小时内回复 · 你的信息不会被分享给第三方",
-    "fs-t":"已收到！","fs-p":"我们会在24小时内联系你，开始为你的城市和目标客户制作第一条视频。",
+    "ah-t":"📋 定制所需素材说明",
+    "ah-photo-t":"🖼 经纪人照片","ah-photo-1":"正面清晰，光线充足","ah-photo-2":"背景简洁（纯色或室内）","ah-photo-3":"格式：JPG / PNG，≥ 1MB",
+    "ah-audio-t":"🎙 训练用音频","ah-audio-1":"时长：3～10 分钟","ah-audio-2":"内容：朗读任意文字（自我介绍、新闻均可）","ah-audio-3":"环境：安静室内，无背景噪音","ah-audio-4":"设备：手机录音即可","ah-audio-5":"格式：MP3 / WAV / M4A",
+    "ah-note":"📝 发送素材时，请在邮件中注明您的<strong>姓名</strong>及 <strong>DRE 执照号</strong>，以便与表单信息匹配。",
+    "ah-send":"✉️ 提交表单后，请将以上素材发送至 <a href=\"mailto:alexairealty8@gmail.com\">alexairealty8@gmail.com</a>",
+    "fs-back":"← 返回表单",
+    "fs-t":"已收到！","fs-p":"我们会在24小时内联系你，开始为你的城市和目标客户制作第一条视频。","fs-upload":"📎 如需定制数字替身或个人音色，请将<strong>经纪人照片</strong>及<strong>训练用音频</strong>发送至：<br><a href=\"mailto:alexairealty8@gmail.com\" style=\"color:var(--gold);font-weight:700;\">alexairealty8@gmail.com</a>",
     "wc-t":"微信联系我","wc-p":"扫码添加，或直接搜索微信号","wc-id":"微信号：<strong>YOUR_WECHAT_ID</strong>",
     "footer-desc":"房产经纪人持续曝光内容服务 · 南加州",
     "footer-disc":"AlexAI Realty 制作的视频仅为营销材料，不构成法律、评估或经纪建议。定价随时可能调整。"
@@ -1012,10 +1067,16 @@ const T = {
     "f-audience":"你嘅目標客戶主要講咩語言？ *",
     "fa-0":"請選擇","fa-1":"🇨🇳 普通話（華人客戶）","fa-2":"🇭🇰 廣東話（港澳移民）","fa-3":"🇺🇸 英語（主流市場）","fa-4":"🇯🇵 日語（日裔客戶）","fa-5":"🇰🇷 韓語（韓裔客戶）","fa-6":"🇮🇷 波斯語（伊朗社區）","fa-7":"多語言（唔止一種）",
     "f-plan":"有興趣嘅套餐",
-    "fp-0":"請選擇","fp-1":"🎁 先免費攞一套樣片","fp-2":"入門款 — $99/月","fp-3":"基礎款 — $199/月","fp-4":"專業款 — $349/月","fp-5":"企業版 — 預約面談",
+    "fp-0":"請選擇","fp-1":"🎁 先免費攞一套樣片","fp-2":"入門款 — $99/月（冇數字替身）","fp-3":"基礎款 — $199/月（有定製數字替身）","fp-4":"專業款 — $349/月（有定製數字替身）","fp-5":"企業版 — 預約面談",
     "f-msg":"其他說明（可選）","f-msg-ph":"你嘅任何想法、問題，或者你最想做嘅第一條視頻內容…",
     "f-submit":"發送，免費攞樣片 →","f-note":"24小時內回覆 · 你嘅資料唔會被分享俾第三方",
-    "fs-t":"已收到！","fs-p":"我哋會喺24小時內聯絡你，開始為你嘅城市同目標客戶製作第一條視頻。",
+    "ah-t":"📋 定製所需素材說明",
+    "ah-photo-t":"🖼 經紀人照片","ah-photo-1":"正面清晰，光線充足","ah-photo-2":"背景簡潔（純色或室內）","ah-photo-3":"格式：JPG / PNG，≥ 1MB",
+    "ah-audio-t":"🎙 訓練用音頻","ah-audio-1":"時長：3～10 分鐘","ah-audio-2":"內容：朗讀任意文字（自我介紹、新聞均可）","ah-audio-3":"環境：安靜室內，無背景噪音","ah-audio-4":"設備：手機錄音即可","ah-audio-5":"格式：MP3 / WAV / M4A",
+    "ah-note":"📝 發送素材時，請喺郵件中注明您嘅<strong>姓名</strong>同 <strong>DRE 執照號</strong>，以便核對表單資料。",
+    "ah-send":"✉️ 提交表單後，請將以上素材發送至 <a href=\"mailto:alexairealty8@gmail.com\">alexairealty8@gmail.com</a>",
+    "fs-back":"← 返回表單",
+    "fs-t":"已收到！","fs-p":"我哋會喺24小時內聯絡你，開始為你嘅城市同目標客戶製作第一條視頻。","fs-upload":"📎 如需定製數字替身或個人音色，請將<strong>經紀人照片</strong>同<strong>訓練用音頻</strong>發送至：<br><a href=\"mailto:alexairealty8@gmail.com\" style=\"color:var(--gold);font-weight:700;\">alexairealty8@gmail.com</a>",
     "wc-t":"微信聯絡我","wc-p":"掃碼添加，或直接搜尋微信號","wc-id":"微信號：<strong>YOUR_WECHAT_ID</strong>",
     "footer-desc":"物業經紀人持續曝光內容服務 · 南加州",
     "footer-disc":"AlexAI Realty 製作嘅視頻僅為推廣材料，不構成法律、估值或經紀建議。定價隨時可能調整。"
@@ -1084,10 +1145,16 @@ const T = {
     "f-audience":"What language do your target clients speak? *",
     "fa-0":"Select one","fa-1":"🇨🇳 Mandarin (Chinese clients)","fa-2":"🇭🇰 Cantonese (HK & Macau diaspora)","fa-3":"🇺🇸 English (mainstream market)","fa-4":"🇯🇵 Japanese (Japanese-American clients)","fa-5":"🇰🇷 Korean (Korean-American clients)","fa-6":"🇮🇷 Persian (Iranian community)","fa-7":"Multiple languages",
     "f-plan":"Interested plan",
-    "fp-0":"Select one","fp-1":"🎁 Free sample video first","fp-2":"Starter — $99/mo","fp-3":"Basic — $199/mo","fp-4":"Pro — $349/mo","fp-5":"Enterprise — book a meeting",
+    "fp-0":"Select one","fp-1":"🎁 Free sample video first","fp-2":"Starter — $99/mo (no AI avatar)","fp-3":"Basic — $199/mo (with custom AI avatar)","fp-4":"Pro — $349/mo (with custom AI avatar)","fp-5":"Enterprise — book a meeting",
     "f-msg":"Anything else (optional)","f-msg-ph":"Your questions, ideas, or the first video you most want made…",
     "f-submit":"Send & Get My Free Video →","f-note":"We respond within 24 hours. Your info is never shared.",
-    "fs-t":"Got it!","fs-p":"We'll reach out within 24 hours and start building your first video for your city and clients.",
+    "ah-t":"📋 Assets Needed for Customization",
+    "ah-photo-t":"🖼 Headshot Photo","ah-photo-1":"Clear front-facing shot, well-lit","ah-photo-2":"Simple background (solid color or indoor)","ah-photo-3":"Format: JPG / PNG, ≥ 1MB",
+    "ah-audio-t":"🎙 Voice Training Audio","ah-audio-1":"Length: 3–10 minutes","ah-audio-2":"Content: read any text aloud (bio, news, script)","ah-audio-3":"Environment: quiet indoor space, no background noise","ah-audio-4":"Device: smartphone recording is fine","ah-audio-5":"Format: MP3 / WAV / M4A",
+    "ah-note":"📝 Please include your <strong>full name</strong> and <strong>DRE license number</strong> in the email so we can match it with your form submission.",
+    "ah-send":"✉️ After submitting the form, please email the above assets to <a href=\"mailto:alexairealty8@gmail.com\">alexairealty8@gmail.com</a>",
+    "fs-back":"← Back to form",
+    "fs-t":"Got it!","fs-p":"We'll reach out within 24 hours and start building your first video for your city and clients.","fs-upload":"📎 To customize your AI avatar or personal voiceover, please email your <strong>headshot photo</strong> and <strong>voice training audio</strong> to:<br><a href=\"mailto:alexairealty8@gmail.com\" style=\"color:var(--gold);font-weight:700;\">alexairealty8@gmail.com</a>",
     "wc-t":"Add Me on WeChat","wc-p":"Scan the QR code or search my WeChat ID","wc-id":"WeChat ID: <strong>YOUR_WECHAT_ID</strong>",
     "footer-desc":"Monthly Content & Exposure Service for Real Estate Agents · Southern California",
     "footer-disc":"Videos produced by AlexAI Realty are marketing materials only and do not constitute legal, appraisal, or brokerage advice. Pricing subject to change."
@@ -1110,12 +1177,43 @@ function setLang(l) {
   if(featured) featured.setAttribute('data-badge', l==='en'?'Most Popular':l==='yue'?'最受歡迎':'最受欢迎');
 }
 
+// 套餐选择 → 动态展开音频/照片要求提示框
+(function(){
+  var planSelect = document.querySelector('select[name="plan"]');
+  var hint = document.getElementById('audio-hint');
+  // 需要定制素材的套餐值
+  var needsAssets = ['free','basic','pro','enterprise'];
+  if(planSelect && hint){
+    planSelect.addEventListener('change', function(){
+      if(needsAssets.indexOf(this.value) > -1){
+        hint.classList.add('show');
+      } else {
+        hint.classList.remove('show');
+      }
+    });
+  }
+})();
+
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',function(e){
     const t=document.querySelector(this.getAttribute('href'));
     if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
   });
 });
+
+function resetForm(){
+  var form = document.getElementById('contact-form');
+  var success = document.getElementById('form-success');
+  var btn = form.querySelector('.form-submit');
+  form.reset();
+  document.getElementById('audio-hint').classList.remove('show');
+  btn.disabled = false;
+  // restore button text via i18n
+  var lang = document.documentElement.getAttribute('data-lang') || 'zh';
+  btn.textContent = i18n[lang]['f-submit'] || '发送，免费领样片 →';
+  success.style.display = 'none';
+  form.style.display = '';
+}
 
 function handleSubmit(e){
   e.preventDefault();
