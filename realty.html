@@ -366,6 +366,7 @@
     }
     .form-submit:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: var(--sh2); }
     .form-note { text-align: center; color: rgba(255,255,255,0.34); font-size: 0.75rem; margin-top: 12px; }
+    .field-hint { color: rgba(255,255,255,0.46); font-size: 0.78rem; line-height: 1.6; margin-top: 6px; }
     /* Audio hint box */
     .audio-hint {
       display: none; margin-top: 12px;
@@ -474,7 +475,7 @@
   <p class="hero-sub2" data-i18n="hero-sub2">内容我们做，曝光你拿。</p>
 
   <div class="hero-btns">
-    <a href="#contact" class="btn-gold" data-i18n="hero-btn1">免费领第一套样片</a>
+    <a href="#contact" class="btn-gold" data-i18n="hero-btn1">免费领第一条样片</a>
     <a href="#pricing" class="btn-outline" data-i18n="hero-btn2">查看套餐</a>
   </div>
   <p class="hero-note" data-i18n="hero-note">告诉我你的城市和你的目标客户说什么语言——我们帮你做好第一条</p>
@@ -651,7 +652,7 @@
   <!-- Free banner -->
   <div class="free-banner">
     <div class="gift">🎁</div>
-    <h3 data-i18n="free-t">第一套视频，<span>完全免费</span></h3>
+    <h3 data-i18n="free-t">第一条视频，<span>完全免费</span></h3>
     <p data-i18n="free-p">告诉我们你的城市和你的目标客户说什么语言——我们免费帮你做好第一条视频，你看了满意再决定要不要继续。</p>
     <a href="#contact" class="btn-gold" data-i18n="free-cta">免费领样片 →</a>
     <p style="font-size:0.75rem;color:rgba(255,255,255,0.35);margin-top:12px;margin-bottom:0;" data-i18n="free-note">无需承诺 · 无需信用卡 · 48小时交付</p>
@@ -811,6 +812,13 @@
 
   <div class="form-wrap">
     <form id="contact-form" onsubmit="handleSubmit(event)">
+      <!-- 新字段：房源信息（放在第一位，强化"免费定制房源样片"的信任锚点） -->
+      <div class="fg">
+        <label data-i18n="f-listing">把您需要推广的一栋房屋告诉我，要求必须是目前正在市场上的listing *</label>
+        <input type="text" name="listing" placeholder="地址 / MLS号 / Zillow或Redfin链接 / 小区名+户型+大概价位" required data-i18n-placeholder="f-listing-ph" />
+        <p class="field-hint" data-i18n="f-listing-hint">必须是目前在市场上的真实 listing（地址、MLS号，或 Zillow / Redfin 链接，或"小区名+户型+大概价位"三选一皆可）。信息越详细，免费样片越精准——48 小时内我们用这套房源给您做一条带您名字、电话的定制介绍视频。</p>
+      </div>
+
       <div class="form-row">
         <div class="fg">
           <label data-i18n="f-name">姓名 *</label>
@@ -857,7 +865,7 @@
         <label data-i18n="f-plan">感兴趣的套餐</label>
         <select name="plan">
           <option value="" data-i18n="fp-0">请选择</option>
-          <option value="free" data-i18n="fp-1">🎁 先免费领一套样片</option>
+          <option value="free" data-i18n="fp-1">🎁 先免费领一条样片</option>
           <option value="starter" data-i18n="fp-2">入门款 — $99/月（3条视频，1种语言，无数字替身）</option>
           <option value="basic" data-i18n="fp-3">基础款 — $199/月（3条视频，双语，有定制数字替身）</option>
           <option value="pro" data-i18n="fp-4">专业款 — $349/月（6条视频，双语，有定制数字替身）</option>
@@ -997,7 +1005,7 @@ const T = {
     "hero-h1":"你的名字，每周<br><em>出现在你的客户面前！</em>",
     "hero-sub1":"不用出镜，不用剪辑，不用想发什么——我们每月帮你做好视频，你只需要转发。",
     "hero-sub2":"内容我们做，曝光你拿。",
-    "hero-btn1":"免费领第一套样片","hero-btn2":"查看套餐",
+    "hero-btn1":"免费领第一条样片","hero-btn2":"查看套餐",
     "hero-note":"告诉我你的城市和你的目标客户说什么语言——我们帮你做好第一条",
     "pain-h":"你的客户每天在刷视频。<br><em>你的同行，已经在发了。</em>",
     "pain-p":"不是不想做——是每一步都太消耗精力。",
@@ -1029,7 +1037,7 @@ const T = {
     "p3-f1":"每月 6 条视频","p3-f2":"✅ 专属定制数字替身出镜","p3-f3":"你指定的语言 + 英语（双语）","p3-f4":"内容类型自由分配（房源 / 市场分析 / 学区 / 社区 / 成交排名）","p3-f5":"竖屏 · 适配全平台","p3-f6":"📡 同步发布到 AlexAI Realty 社交媒体矩阵",
     "p4-label":"企业版","p4-p":"经纪行、团队、多城市部署——视频数量、语言数量、定制化程度均可协商。我们一对一谈。","p4-cta":"预约洽谈 →",
     "p-start":"开始订阅 →",
-    "free-t":"第一套视频，<span>完全免费</span>",
+    "free-t":"第一条视频，<span>完全免费</span>",
     "free-p":"告诉我们你的城市和你的目标客户说什么语言——我们免费帮你做好第一条视频，你看了满意再决定要不要继续。",
     "free-cta":"免费领样片 →","free-note":"无需承诺 · 无需信用卡 · 48小时交付",
     "vid-label":"样片展示","vid-title":"这就是我们每月交付给经纪人的内容",
@@ -1050,21 +1058,22 @@ const T = {
     "contact-label":"开始合作","contact-title":"告诉我你的城市和你的目标客户",
     "contact-sub":"我们用你目标客户的语言，每月帮你出现在他们面前。留下信息，免费领第一条视频。",
     "btn-wechat":"微信联系","btn-cal":"预约通话","or-text":"或填写表单","bk-t":"预约通话","bk-p":"请填写您的联系方式和希望通话的时间，我们会尽快确认。","bk-submit":"发送预约请求 →","bk-ok-t":"预约请求已发送！","bk-ok-p":"我们会尽快与您确认通话时间。",
+    "f-listing":"把您需要推广的一栋房屋告诉我，要求必须是目前正在市场上的listing *","f-listing-ph":"地址 / MLS号 / Zillow或Redfin链接 / 小区名+户型+大概价位","f-listing-hint":"必须是目前在市场上的真实 listing（地址、MLS号，或 Zillow / Redfin 链接，或“小区名+户型+大概价位”三选一皆可）。信息越详细，免费样片越精准——48 小时内我们用这套房源给您做一条带您名字、电话的定制介绍视频。",
     "f-name":"姓名 *","f-dre":"执照号 (DRE)","f-email":"邮箱 *","f-phone":"电话 / 微信号",
     "f-city":"你主要服务哪些城市 / 社区？ *","f-city-ph":"例如：Irvine, Arcadia, San Marino",
     "f-audience":"你的目标客户主要说什么语言？ *",
     "fa-0":"请选择","fa-1":"🇨🇳 普通话（华人客户）","fa-2":"🇭🇰 粤语（港澳移民）","fa-3":"🇺🇸 英语（主流市场）","fa-4":"🇯🇵 日语（日裔客户）","fa-5":"🇰🇷 韩语（韩裔客户）","fa-6":"🇮🇷 波斯语（伊朗社区）","fa-7":"多语言（不止一种）",
     "f-plan":"感兴趣的套餐",
-    "fp-0":"请选择","fp-1":"🎁 先免费领一套样片","fp-2":"入门款 — $99/月（无数字替身）","fp-3":"基础款 — $199/月（有定制数字替身）","fp-4":"专业款 — $349/月（有定制数字替身）","fp-5":"企业版 — 预约面谈",
+    "fp-0":"请选择","fp-1":"🎁 先免费领一条样片","fp-2":"入门款 — $99/月（无数字替身）","fp-3":"基础款 — $199/月（有定制数字替身）","fp-4":"专业款 — $349/月（有定制数字替身）","fp-5":"企业版 — 预约面谈",
     "f-msg":"其他说明（可选）","f-msg-ph":"你的任何想法、问题，或者你最想做的第一条视频内容…",
-    "f-submit":"发送，免费领样片 →","f-note":"24小时内回复 · 你的信息不会被分享给第三方",
+    "f-submit":"发送，48小时领取我的定制房源样片 →","f-note":"24小时内回复 · 你的信息不会被分享给第三方",
     "ah-t":"📋 定制所需素材说明",
     "ah-photo-t":"🖼 经纪人照片","ah-photo-1":"正面清晰，光线充足","ah-photo-2":"背景简洁（纯色或室内）","ah-photo-3":"格式：JPG / PNG，≥ 1MB",
     "ah-audio-t":"🎙 训练用音频","ah-audio-1":"时长：3～10 分钟","ah-audio-2":"内容：朗读任意文字（自我介绍、新闻均可）","ah-audio-3":"环境：安静室内，无背景噪音","ah-audio-4":"设备：手机录音即可","ah-audio-5":"格式：MP3 / WAV / M4A",
     "ah-note":"📝 发送素材时，请在邮件中注明您的<strong>姓名</strong>及 <strong>DRE 执照号</strong>，以便与表单信息匹配。",
     "ah-send":"✉️ 提交表单后，请将以上素材发送至 <a href=\"mailto:alexairealty8@gmail.com\">alexairealty8@gmail.com</a>",
     "fs-back":"← 返回表单",
-    "fs-t":"已收到！","fs-p":"我们会在24小时内联系你，开始为你的城市和目标客户制作第一条视频。","fs-upload":"📎 如需定制数字替身或个人音色，请将<strong>经纪人照片</strong>及<strong>训练用音频</strong>发送至：<br><a href=\"mailto:alexairealty8@gmail.com\" style=\"color:var(--gold);font-weight:700;\">alexairealty8@gmail.com</a>",
+    "fs-t":"已收到！","fs-p":"我们会在24小时内联系你，48小时内用你提供的房源做好一条带你名字、电话的定制介绍样片发给你。","fs-upload":"📎 如需定制数字替身或个人音色，请将<strong>经纪人照片</strong>及<strong>训练用音频</strong>发送至：<br><a href=\"mailto:alexairealty8@gmail.com\" style=\"color:var(--gold);font-weight:700;\">alexairealty8@gmail.com</a>",
     "wc-t":"微信联系我","wc-p":"扫码添加，或直接搜索微信号","wc-id":"微信号：<strong>YOUR_WECHAT_ID</strong>",
     "footer-desc":"房产经纪人持续曝光内容服务 · 南加州",
     "footer-disc":"AlexAI Realty 制作的视频仅为营销材料，不构成法律、评估或经纪建议。定价随时可能调整。"
@@ -1075,7 +1084,7 @@ const T = {
     "hero-h1":"你嘅名字，每周<br><em>出現喺你嘅客戶面前！</em>",
     "hero-sub1":"唔使出鏡，唔使剪片，唔使諗發咩——我哋每月幫你做好視頻，你淨係轉發就得。",
     "hero-sub2":"內容我哋做，曝光你攞。",
-    "hero-btn1":"免費攞第一套樣片","hero-btn2":"睇套餐",
+    "hero-btn1":"免費攞第一條樣片","hero-btn2":"睇套餐",
     "hero-note":"話俾我知你嘅城市同你嘅目標客戶講咩語言——我哋幫你做好第一條",
     "pain-h":"你嘅客戶每日喺度刷視頻。<br><em>你嘅同行，已經喺發緊。</em>",
     "pain-p":"唔係唔想做——係每一步都太消耗精力。",
@@ -1107,7 +1116,7 @@ const T = {
     "p3-f1":"每月 6 條視頻","p3-f2":"✅ 專屬定製數字替身出鏡","p3-f3":"你指定嘅語言 + 英語（雙語）","p3-f4":"內容類型自由分配（樓盤 / 市場分析 / 學區 / 社區 / 成交排名）","p3-f5":"豎屏 · 適配全平台","p3-f6":"📡 同步發布到 AlexAI Realty 社交媒體矩陣",
     "p4-label":"企業版","p4-p":"經紀行、團隊、多城市部署——視頻數量、語言數量、定製化程度均可協商。我哋一對一傾。","p4-cta":"預約洽談 →",
     "p-start":"開始訂閱 →",
-    "free-t":"第一套視頻，<span>完全免費</span>",
+    "free-t":"第一條視頻，<span>完全免費</span>",
     "free-p":"話俾我哋知你嘅城市同你嘅目標客戶講咩語言——我哋免費幫你做好第一條視頻，你睇咗滿意再決定要唔要繼續。",
     "free-cta":"免費攞樣片 →","free-note":"無需承諾 · 無需信用卡 · 48小時交付",
     "vid-label":"樣片展示","vid-title":"呢就係我哋每月交付俾經紀人嘅內容",
@@ -1128,21 +1137,22 @@ const T = {
     "contact-label":"開始合作","contact-title":"話俾我知你嘅城市同你嘅目標客戶",
     "contact-sub":"我哋用你目標客戶嘅語言，每月幫你出現喺佢哋面前。留低資料，免費攞第一條視頻。",
     "btn-wechat":"微信聯絡","btn-cal":"預約通話","or-text":"或填寫表格","bk-t":"預約通話","bk-p":"請填寫您嘅聯絡方式同希望通話嘅時間，我哋會盡快確認。","bk-submit":"發送預約請求 →","bk-ok-t":"預約請求已發送！","bk-ok-p":"我哋會盡快同您確認通話時間。",
+    "f-listing":"話俾我知你而家賣緊嘅一套房 *","f-listing-ph":"地址 / MLS號 / Zillow或Redfin連結 / 屋苑名+戶型+大約價位","f-listing-hint":"必須係而家市場上真實嘅 listing（地址、MLS號，或者 Zillow / Redfin 連結，或者「屋苑名+戶型+大約價位」三選一都得）。資料越詳細，免費樣片就越精準——48小時內我哋會用呢套房源幫你做一條有你個名、電話嘅定制介紹片。",
     "f-name":"姓名 *","f-dre":"執照號 (DRE)","f-email":"電郵 *","f-phone":"電話 / 微信號",
     "f-city":"你主要服務邊啲城市 / 社區？ *","f-city-ph":"例如：Irvine, Arcadia, San Marino",
     "f-audience":"你嘅目標客戶主要講咩語言？ *",
     "fa-0":"請選擇","fa-1":"🇨🇳 普通話（華人客戶）","fa-2":"🇭🇰 廣東話（港澳移民）","fa-3":"🇺🇸 英語（主流市場）","fa-4":"🇯🇵 日語（日裔客戶）","fa-5":"🇰🇷 韓語（韓裔客戶）","fa-6":"🇮🇷 波斯語（伊朗社區）","fa-7":"多語言（唔止一種）",
     "f-plan":"有興趣嘅套餐",
-    "fp-0":"請選擇","fp-1":"🎁 先免費攞一套樣片","fp-2":"入門款 — $99/月（冇數字替身）","fp-3":"基礎款 — $199/月（有定製數字替身）","fp-4":"專業款 — $349/月（有定製數字替身）","fp-5":"企業版 — 預約面談",
+    "fp-0":"請選擇","fp-1":"🎁 先免費攞一條樣片","fp-2":"入門款 — $99/月（冇數字替身）","fp-3":"基礎款 — $199/月（有定製數字替身）","fp-4":"專業款 — $349/月（有定製數字替身）","fp-5":"企業版 — 預約面談",
     "f-msg":"其他說明（可選）","f-msg-ph":"你嘅任何想法、問題，或者你最想做嘅第一條視頻內容…",
-    "f-submit":"發送，免費攞樣片 →","f-note":"24小時內回覆 · 你嘅資料唔會被分享俾第三方",
+    "f-submit":"發送，48小時攞我嘅定制房源樣片 →","f-note":"24小時內回覆 · 你嘅資料唔會被分享俾第三方",
     "ah-t":"📋 定製所需素材說明",
     "ah-photo-t":"🖼 經紀人照片","ah-photo-1":"正面清晰，光線充足","ah-photo-2":"背景簡潔（純色或室內）","ah-photo-3":"格式：JPG / PNG，≥ 1MB",
     "ah-audio-t":"🎙 訓練用音頻","ah-audio-1":"時長：3～10 分鐘","ah-audio-2":"內容：朗讀任意文字（自我介紹、新聞均可）","ah-audio-3":"環境：安靜室內，無背景噪音","ah-audio-4":"設備：手機錄音即可","ah-audio-5":"格式：MP3 / WAV / M4A",
     "ah-note":"📝 發送素材時，請喺郵件中注明您嘅<strong>姓名</strong>同 <strong>DRE 執照號</strong>，以便核對表單資料。",
     "ah-send":"✉️ 提交表單後，請將以上素材發送至 <a href=\"mailto:alexairealty8@gmail.com\">alexairealty8@gmail.com</a>",
     "fs-back":"← 返回表單",
-    "fs-t":"已收到！","fs-p":"我哋會喺24小時內聯絡你，開始為你嘅城市同目標客戶製作第一條視頻。","fs-upload":"📎 如需定製數字替身或個人音色，請將<strong>經紀人照片</strong>同<strong>訓練用音頻</strong>發送至：<br><a href=\"mailto:alexairealty8@gmail.com\" style=\"color:var(--gold);font-weight:700;\">alexairealty8@gmail.com</a>",
+    "fs-t":"已收到！","fs-p":"我哋會喺24小時內聯絡你，48小時內用你提供嘅房源做返一條有你個名、電話嘅定制介紹樣片俾你。","fs-upload":"📎 如需定製數字替身或個人音色，請將<strong>經紀人照片</strong>同<strong>訓練用音頻</strong>發送至：<br><a href=\"mailto:alexairealty8@gmail.com\" style=\"color:var(--gold);font-weight:700;\">alexairealty8@gmail.com</a>",
     "wc-t":"微信聯絡我","wc-p":"掃碼添加，或直接搜尋微信號","wc-id":"微信號：<strong>YOUR_WECHAT_ID</strong>",
     "footer-desc":"物業經紀人持續曝光內容服務 · 南加州",
     "footer-disc":"AlexAI Realty 製作嘅視頻僅為推廣材料，不構成法律、估值或經紀建議。定價隨時可能調整。"
@@ -1206,6 +1216,7 @@ const T = {
     "contact-label":"Get Started","contact-title":"Tell Me Your City and Your Clients",
     "contact-sub":"We show up for your clients in their language, every month. Leave your info and get your first video free.",
     "btn-wechat":"Add on WeChat","btn-cal":"Book a Call","or-text":"or fill out the form","bk-t":"Book a Call","bk-p":"Leave your contact info and preferred time. We'll confirm shortly.","bk-submit":"Send Request →","bk-ok-t":"Request Sent!","bk-ok-p":"We'll reach out to confirm your call time soon.",
+    "f-listing":"Tell us about a listing you're currently selling *","f-listing-ph":"Address / MLS # / Zillow or Redfin link / community name + type + approx. price","f-listing-hint":"Must be a real, currently-active listing (an address, MLS number, a Zillow/Redfin link, or \"community name + property type + approx. price\" — any one works). The more detail you give, the more accurate your free sample will be — within 48 hours we'll turn this listing into a custom intro video with your name and number on it.",
     "f-name":"Your Name *","f-dre":"License # (DRE)","f-email":"Email *","f-phone":"Phone / WeChat ID",
     "f-city":"Which cities or communities do you serve? *","f-city-ph":"e.g. Irvine, Arcadia, San Marino",
     "f-audience":"What language do your target clients speak? *",
@@ -1213,14 +1224,14 @@ const T = {
     "f-plan":"Interested plan",
     "fp-0":"Select one","fp-1":"🎁 Free sample video first","fp-2":"Starter — $99/mo (no AI avatar)","fp-3":"Basic — $199/mo (with custom AI avatar)","fp-4":"Pro — $349/mo (with custom AI avatar)","fp-5":"Enterprise — book a meeting",
     "f-msg":"Anything else (optional)","f-msg-ph":"Your questions, ideas, or the first video you most want made…",
-    "f-submit":"Send & Get My Free Video →","f-note":"We respond within 24 hours. Your info is never shared.",
+    "f-submit":"Send & Get My Custom Listing Video in 48h →","f-note":"We respond within 24 hours. Your info is never shared.",
     "ah-t":"📋 Assets Needed for Customization",
     "ah-photo-t":"🖼 Headshot Photo","ah-photo-1":"Clear front-facing shot, well-lit","ah-photo-2":"Simple background (solid color or indoor)","ah-photo-3":"Format: JPG / PNG, ≥ 1MB",
     "ah-audio-t":"🎙 Voice Training Audio","ah-audio-1":"Length: 3–10 minutes","ah-audio-2":"Content: read any text aloud (bio, news, script)","ah-audio-3":"Environment: quiet indoor space, no background noise","ah-audio-4":"Device: smartphone recording is fine","ah-audio-5":"Format: MP3 / WAV / M4A",
     "ah-note":"📝 Please include your <strong>full name</strong> and <strong>DRE license number</strong> in the email so we can match it with your form submission.",
     "ah-send":"✉️ After submitting the form, please email the above assets to <a href=\"mailto:alexairealty8@gmail.com\">alexairealty8@gmail.com</a>",
     "fs-back":"← Back to form",
-    "fs-t":"Got it!","fs-p":"We'll reach out within 24 hours and start building your first video for your city and clients.","fs-upload":"📎 To customize your AI avatar or personal voiceover, please email your <strong>headshot photo</strong> and <strong>voice training audio</strong> to:<br><a href=\"mailto:alexairealty8@gmail.com\" style=\"color:var(--gold);font-weight:700;\">alexairealty8@gmail.com</a>",
+    "fs-t":"Got it!","fs-p":"We'll reach out within 24 hours, and within 48 hours we'll turn the listing you shared into a custom intro video with your name and number on it.","fs-upload":"📎 To customize your AI avatar or personal voiceover, please email your <strong>headshot photo</strong> and <strong>voice training audio</strong> to:<br><a href=\"mailto:alexairealty8@gmail.com\" style=\"color:var(--gold);font-weight:700;\">alexairealty8@gmail.com</a>",
     "wc-t":"Add Me on WeChat","wc-p":"Scan the QR code or search my WeChat ID","wc-id":"WeChat ID: <strong>YOUR_WECHAT_ID</strong>",
     "footer-desc":"Monthly Content & Exposure Service for Real Estate Agents · Southern California",
     "footer-disc":"Videos produced by AlexAI Realty are marketing materials only and do not constitute legal, appraisal, or brokerage advice. Pricing subject to change."
@@ -1318,7 +1329,7 @@ function handleSubmit(e){
   hiddenForm.style.display = 'none';
 
   // 把所有字段复制进去
-  var fields = ['name','dre','email','phone','city','audience','plan','message'];
+  var fields = ['listing','name','dre','email','phone','city','audience','plan','message'];
   fields.forEach(function(name){
     var el = form.querySelector('[name="'+name+'"]');
     var input = document.createElement('input');
