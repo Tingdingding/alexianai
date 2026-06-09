@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AlexAI Realty · 房产经纪人曝光服务</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -927,7 +935,7 @@
     <a href="#contact" data-i18n="nav-contact">联系我们</a>
   </div>
   <p><strong>AlexAI Realty</strong> · <span data-i18n="footer-desc">房产经纪人持续曝光内容服务 · 南加州</span></p>
-  <p style="margin-top:6px;">© 2026 AlexAI Realty · <a href="mailto:jqian989@gmail.com">jqian989@gmail.com</a></p>
+  <p style="margin-top:6px;">© 2026 AlexAI Realty · <a href="mailto:alexairealty8@gmail.com">alexairealty8@gmail.com</a></p>
   <p style="margin-top:6px;font-size:0.72rem;" data-i18n="footer-disc">AlexAI Realty 制作的视频仅为营销材料，不构成法律、评估或经纪建议。定价随时可能调整。</p>
 </footer>
 
@@ -1328,6 +1336,14 @@ function handleSubmit(e){
   hiddenForm.target = iframeName;
   hiddenForm.style.display = 'none';
 
+  // 读取 UTM 参数
+  var urlParams = new URLSearchParams(window.location.search);
+  var utmFields = {
+    utm_source:   urlParams.get('utm_source')   || 'direct',
+    utm_medium:   urlParams.get('utm_medium')   || '',
+    utm_campaign: urlParams.get('utm_campaign') || ''
+  };
+
   // 把所有字段复制进去
   var fields = ['listing','name','dre','email','phone','city','audience','plan','message'];
   fields.forEach(function(name){
@@ -1339,12 +1355,30 @@ function handleSubmit(e){
     hiddenForm.appendChild(input);
   });
 
+  // 附加 UTM 字段
+  Object.keys(utmFields).forEach(function(key){
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = key;
+    input.value = utmFields[key];
+    hiddenForm.appendChild(input);
+  });
+
   document.body.appendChild(hiddenForm);
 
   // iframe 加载完 = 提交完成
   iframe.onload = function(){
     form.style.display = 'none';
     document.getElementById('form-success').style.display = 'block';
+    // GA4 转化事件
+    if(typeof gtag === 'function'){
+      gtag('event', 'generate_lead', {
+        event_category: 'form',
+        event_label: 'realty_landing_page',
+        utm_source: utmFields.utm_source,
+        utm_campaign: utmFields.utm_campaign
+      });
+    }
     // 清理
     setTimeout(function(){
       document.body.removeChild(iframe);
@@ -1357,6 +1391,15 @@ function handleSubmit(e){
     if(form.style.display !== 'none'){
       form.style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
+      // 超时兜底也触发 GA4 事件
+      if(typeof gtag === 'function'){
+        gtag('event', 'generate_lead', {
+          event_category: 'form',
+          event_label: 'realty_landing_page',
+          utm_source: utmFields.utm_source,
+          utm_campaign: utmFields.utm_campaign
+        });
+      }
     }
   }, 5000);
 
