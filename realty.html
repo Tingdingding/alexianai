@@ -1423,8 +1423,6 @@ function handleSubmit(e){
 
   // iframe 加载完 = 提交完成
   iframe.onload = function(){
-    form.style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
     // GA4 转化事件
     if(typeof gtag === 'function'){
       gtag('event', 'generate_lead', {
@@ -1434,18 +1432,15 @@ function handleSubmit(e){
         utm_campaign: utmFields.utm_campaign
       });
     }
-    // 清理
+    // 跳转到感谢页（Google Ads URL 转化追踪）
     setTimeout(function(){
-      document.body.removeChild(iframe);
-      document.body.removeChild(hiddenForm);
-    }, 1000);
+      window.location.href = '/thank-you';
+    }, 300);
   };
 
   // 5秒超时兜底
   setTimeout(function(){
-    if(form.style.display !== 'none'){
-      form.style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
+    if(window.location.pathname !== '/thank-you'){
       // 超时兜底也触发 GA4 事件
       if(typeof gtag === 'function'){
         gtag('event', 'generate_lead', {
@@ -1455,6 +1450,7 @@ function handleSubmit(e){
           utm_campaign: utmFields.utm_campaign
         });
       }
+      window.location.href = '/thank-you';
     }
   }, 5000);
 
